@@ -1,0 +1,233 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+
+.c-ft{//font-family
+	&--en{
+		font-family: $font-en;
+	}
+	&--jp{
+		font-family: $font-jp;
+	}
+}
+
+
+
+.c-fw{//font-weight
+	&--lt{
+		font-weight: 300!important
+	}
+	&--rg{
+		font-weight: 400!important
+	}
+	&--md{
+		font-weight: 500!important
+	}
+	&--sbd{
+		font-weight: 600!important
+	}
+	&--bd{
+		font-weight: 700!important
+	}
+	&--bk{
+		font-weight: 900!important
+	}
+}
+
+
+
+.c-tx--v {
+	//Vertical writing
+	//display: inline-block;
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	&-pc{
+		@include mq(md-min) {
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+		}
+	}
+}
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		display: block;
+		text-align: center;
+		line-height: 1.4;
+		font-family: $font-en;
+		color: $blue;
+		@include font-size(40);
+		font-weight: bold;
+		margin-bottom: 50px;
+		@include mq(){
+			@include font-size(24);
+			margin-bottom: 30px;
+		}
+	}
+	&__02{
+		display: block;
+		@include font-size(18);
+		font-weight: bold;
+		margin-bottom: 30px;
+		span{
+			display: inline-block;
+			position: relative;
+			padding: 0 25px 0 0;
+			&:after{
+				content: "";
+				border: solid #0f1a2a;
+				border-width: 0 2px 2px 0;
+				display: inline-block;
+				padding: 4px;
+				transform: rotate(-45deg);
+				position: absolute;
+				top: 9px;
+				right: 0;
+			}
+		}
+	}
+}
+
+//btn
+.c-btn{
+	&__01{
+		@include flex(center,center,wrap);
+		width: 100%;
+		max-width: 132px;
+		height: 55px;
+		border-radius: 55px;
+		@include font-size(14);
+		color: white;
+		font-weight: bold;
+		background: rgb(55,85,243);
+		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		@include mq(){
+			height: 40px;
+			max-width: 92px;
+		}
+		span{
+			display: block;
+			position: relative;
+			padding: 0 36px 0 0;
+			&:after{
+				content: "";
+				width: 24px;
+				height: 24px;
+				background: url("../img/arrow-right.png")no-repeat;
+				background-size: 100%;
+				position: absolute;
+				@include v-align;
+				right: 0;
+			}
+		}
+	}
+	&__02{
+		@include flex(center,center,wrap);
+		text-align: center;
+		@include font-size(16);
+		font-weight: 600;
+		color: white;
+		background: rgb(55,85,243);
+		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		width: 100%;
+		max-width: 130px;
+		height: 48px;
+		border-radius: 50px;
+		@include mq(){
+			width: 48px;
+			border-radius: 50%;
+		}
+		img{
+			display: block;
+			width: 20px;
+			margin: 0 5px 0 0;
+		}
+		span{
+			@include mq(){
+				display: none;
+			}
+		}
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+

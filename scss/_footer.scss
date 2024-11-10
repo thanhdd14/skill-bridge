@@ -1,0 +1,103 @@
+@use "vars" as *;
+
+#footer{
+	background: url("../img/footer-bg.png")no-repeat;
+	background-size: cover;
+	background-position: top center;
+	color: white;
+	padding: 60px 0 0;
+	@include mq(){
+		background: url("../img/footer-bg-sp.png")no-repeat;
+		background-size: cover;
+		background-position: top left;
+	}
+	a{
+		color: white;
+	}
+	.inner{
+		@include flex(0,0,wrap);
+		align-content: space-between;
+	}
+	.footer-item{
+		width: 50%;
+		@include flex(0,0,wrap);
+		align-content: space-between;
+		@include mq(){
+			width: 100%;
+		}
+	}
+	.footer-logo{
+		width: 100%;
+		display: block;
+		margin-bottom: 30px;
+		@include mq(){
+			width: 100%;
+		}
+		img{
+			width: 211px;
+		}
+	}
+	.footer-link{
+		display: inline-block;
+		position: relative;
+		padding: 0 15px 0 0;
+		@include font-size(14);
+		&:after{
+			content: "";
+			width: 10px;
+			height: 10px;
+			background: url("../img/link.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			right: 0;
+		}
+	}
+	.footer-nav{
+		@include flex(0,0,wrap);
+		width: 50%;
+		@include mq(){
+			width: 100%;
+			padding: 30px 0 0;
+		}
+	}
+	.footer-menu{
+		width: 50%;
+		li{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			a{
+				display: block;
+				@include font-size(16);
+				font-weight: 600;
+				position: relative;
+				@include mq(){
+					font-weight: 400;
+					padding: 0 0 0 10px;
+					@include font-size(14);
+					&:before{
+						content: "";
+						width: 3px;
+						height: 3px;
+						border-radius: 50%;
+						position: absolute;
+						@include v-align;
+						left: 0;
+						background: white;
+					}
+				}
+			}
+		}
+	}
+	.copyright{
+		width: 100%;
+		border-top: 1px solid #6787E7;
+		text-align: center;
+		@include font-size(14);
+		color: #E2E8F0;
+		padding: 20px 0;
+		margin: 30px 0 0;
+	}
+}
