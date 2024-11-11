@@ -146,3 +146,66 @@ textarea.form-control{
 	}
 }
 
+.sec-breadcrumb{
+	padding: 20px 0;
+	@include font-size(16);
+	.inner{
+		@include flex(0,center,wrap);
+		a{
+			display: block;
+			color: #94A3B8;
+			position: relative;
+			padding: 0 20px 0 0;
+			margin-right: 20px;
+			&:after{
+				content: "";
+				border: solid #94A3B8;
+				border-width: 0 2px 2px 0;
+				display: inline-block;
+				padding: 3px;
+				transform: rotate(-45deg);
+				position: absolute;
+				top: 8px;
+				right: 0;
+			}
+		}
+	}
+}
+
+.support-online{
+	position: fixed;
+	@include v-align;
+	right: 15px;
+	background: rgb(55,85,243);
+	background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+	@include font-size(16);
+	line-height: 1.6;
+	color: white;
+	font-weight: bold;
+	max-width: 220px;
+	padding: 5px 20px 5px 75px;
+	border-radius: 60px;
+	@include mq(){
+		width: 60px;
+		height: 60px;
+		@include flex(center,center);
+		padding: 0;
+		span{
+			display: none;
+		}
+	}
+	&:before{
+		content: "";
+		width: 48px;
+		height: 48px;
+		background: url("../img/24h.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		@include v-align;
+		left: 10px;
+		@include mq(){
+			position: static;
+			transform: translateY(0);
+		}
+	}
+}

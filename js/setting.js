@@ -98,6 +98,22 @@ $(".js-slider-news").slick({
         }
     ]
 });
+$(".js-detail-img").slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    centerMode: true,
+    centerPadding: '100px',
+    responsive: [
+        {
+            breakpoint: 640,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ]
+});
 
 
 // $(function () {
