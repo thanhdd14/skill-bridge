@@ -209,3 +209,41 @@ textarea.form-control{
 		}
 	}
 }
+
+.check-list{
+	padding: 0 20px;
+	margin-bottom: 30px;
+	@include mq(){
+		padding: 0;
+	}
+	li{
+		position: relative;
+		@include font-size(16);
+		color: $blue;
+		text-align: left;
+		padding: 12px 34px;
+		font-weight: bold;
+		@include mq(){
+			@include font-size(14);
+		}
+		&:before{
+			content: "";
+			width: 22px;
+			height: 17px;
+			background: url("../img/check.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			left: 0;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: url("../img/line.png")repeat-x;
+		}
+	}
+}

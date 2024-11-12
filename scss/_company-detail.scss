@@ -16,6 +16,13 @@
 		border-radius: 0;
 		@include font-size(14);
 	}
+	&--btn{
+		@include flex(between,center,wrap);
+		margin-bottom: 15px;
+		.c-ttl__03{
+			margin-bottom: 0;
+		}
+	}
 }
 
 .detail-heading{
@@ -156,10 +163,36 @@
 			width: 100%;
 			margin-bottom: 20px;
 		}
-		&-item{
-			border: 1px solid $blue;
+		&-box{
+			border: 1px solid #E2E8F0;
 			border-radius: 16px;
 			padding: 15px;
+			cursor: pointer;
+			@include smooth-transition;
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&:hover{
+				border: 1px solid $blue;
+			}
+		}
+		&-item{
+			&.active{
+				.detail-maps__ct-box{
+					border: 1px solid $blue;
+				}
+				@include mq(){
+					.detail-maps__ct-iframe{
+						display: block;
+					}
+				}
+			}
+		}
+		&-iframe{
+			display: none;
+			border-radius: 16px;
+			overflow: hidden;
 		}
 		&-ttl{
 			display: block;
@@ -193,18 +226,28 @@
 		@include mq(){
 			width: 100%;
 		}
-		iframe{
-			width: 100% !important;
-			height: 410px !important;
-			@include mq(){
-				height: 220px !important;
+		&-item{
+			display: none;
+			&.active{
+				display: block;
 			}
+		}
+
+	}
+	iframe{
+		width: 100% !important;
+		height: 410px !important;
+		@include mq(){
+			height: 220px !important;
 		}
 	}
 }
 
 .detail-img{
 	margin: 0 0 20px -10px;
+	@include mq(){
+		margin: 0 -15px 0 -10px;
+	}
 	.slick-list{
 		padding: 0 15% 0 0 !important;
 	}
@@ -213,6 +256,35 @@
 		img{
 			width: 100%;
 			border-radius: 16px;
+		}
+	}
+}
+
+.banner-list{
+	@include flex(0,0,wrap);
+	padding: 0 20px;
+	@include mq(){
+		padding: 0;
+		margin: 0 -5px;
+	}
+	&__item{
+		width: 25%;
+		padding: 0 10px;
+		margin-bottom: 20px;
+		@include mq(){
+			width: 50%;
+			padding: 0 5px;
+			margin-bottom: 10px;
+		}
+	}
+	&__box{
+		display: block;
+		background: white;
+		border: 1px solid #E2E8F0;
+		border-radius: 8px;
+		padding: 20px;
+		@include mq(){
+			padding: 10px;
 		}
 	}
 }

@@ -8,6 +8,9 @@
 	&--black{
 		color: black !important;
 	}
+	&--red{
+		color: #ED2649 !important;
+	}
 }
 
 
@@ -184,6 +187,63 @@ Component
 				display: none;
 			}
 		}
+	}
+	&__03{
+		@include flex(center,center);
+		@include font-size(14);
+		font-weight: bold;
+		background: rgb(55,85,243);
+		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		width: 110px;
+		height: 44px;
+		border-radius: 50px;
+		text-align: center;
+		border: none;
+		outline: none;
+		padding: 0 35px;
+		cursor: pointer;
+		@include smooth-transition;
+		color: white;
+		&:hover{
+			opacity: 0.7;
+		}
+		&--gray{
+			background: #E2E8F0;
+			color: #1E2A3B;
+			width: 150px;
+		}
+	}
+	&__04{
+		@include flex(center,center,wrap);
+		text-align: center;
+		width: 180px;
+		height: 48px;
+		border-radius: 50px;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		@include font-size(16);
+		background: rgb(55,85,243);
+		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		font-weight: bold;
+		color: white;
+		position: relative;
+		@include smooth-transition;
+		margin: 0 auto;
+		&:after{
+			content: "";
+			width: 24px;
+			height: 24px;
+			background: url("../img/success.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			right: 10px;
+		}
+		&:hover{
+			opacity: 0.7;
+		}
+
 	}
 }
 
