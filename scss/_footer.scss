@@ -126,6 +126,24 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		&--btn{
+			display: block;
+			width: 40px;
+			height: 40px;
+			background: url("../img/x-close02.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: 50px;
+			right: 50px;
+			cursor: pointer;
+			@include mq(){
+				top: auto;
+				right: 0;
+				left: 0;
+				bottom: 40px;
+				margin: 0 auto;
+			}
+		}
 	}
 	&-show{
 		width: 100%;
@@ -302,6 +320,19 @@
 					margin: 0 10px;
 				}
 			}
+		}
+	}
+	&-project{
+		img{
+			max-height: 90vh;
+			@include mq(){
+				max-height: 85vh;
+			}
+		}
+	}
+	&--project{
+		@include mq(){
+			padding-bottom: 60px;
 		}
 	}
 	&--information{

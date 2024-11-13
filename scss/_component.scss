@@ -11,6 +11,9 @@
 	&--red{
 		color: #ED2649 !important;
 	}
+	&--grey{
+		color: $grey !important;
+	}
 }
 
 
@@ -21,6 +24,9 @@
 	}
 	&--jp{
 		font-family: $font-jp;
+	}
+	&--serif{
+		font-family: $font-Serif;
 	}
 }
 
@@ -126,6 +132,12 @@ Component
 			@include font-size(16);
 		}
 	}
+	&__04{
+		display: block;
+		@include font-size(16);
+		text-align: center;
+		font-weight: bold;
+	}
 }
 
 //btn
@@ -173,6 +185,8 @@ Component
 		max-width: 130px;
 		height: 48px;
 		border-radius: 50px;
+		border: none;
+		cursor: pointer;
 		@include mq(){
 			width: 48px;
 			border-radius: 50%;
@@ -186,6 +200,10 @@ Component
 			@include mq(){
 				display: none;
 			}
+		}
+		&--gray{
+			background: #E2E8F0;
+			color: #1E2A3B;
 		}
 	}
 	&__03{

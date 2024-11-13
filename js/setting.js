@@ -11,68 +11,10 @@ $('.js-close-popup').on('click', function(){
     $(".popup").removeClass("active");
 });
 
-// $(document).on("click", function(){
-// 	$("aa").hide();
-// });
-
-// $(window).scroll(function () {
-//     if ($(this).scrollTop() > 10) {
-//         $("#header").addClass("js-fixed");
-//     }
-//     else {
-//         $("#header").removeClass("js-fixed");
-//     }
-// });
-
-//resize slider load page
-// var window_type;
-// var $window = $(window);
-// if ($window.width() <= 1024) {
-//     window_type = 'sp';
-// } else {
-//     window_type = 'pc';
-// }
-// $(window).resize(function() {
-//     if($window.width() <= 1024){
-//         if( (window_type != 'sp') ){
-//             location.reload();
-//         }
-//     }else{
-//         if(window_type != 'pc'){
-//             location.reload();
-//         }
-//     }
-// });
 
 
 
 
-// $(window).on("load resize",function () {
-//     $("main").css("padding-top",$("#header").outerHeight());
-// });
-
-
-
-//siider-home
-// $('.js-mv-slider').slick({
-//     dots: false,
-//     focusOnSelect: true,
-//     pauseOnHover:false,
-//     infinite: true,
-//     speed: 500,
-//     fade: true,
-//     autoplay: false,
-//     cssEase: 'linear'
-// });
-
-// $(".js-product").slick({
-// 	slidesToShow: 3,
-// 	slidesToScroll: 1,
-// 	autoplay: true,
-// 	autoplaySpeed: 2000,
-	// prevArrow:"<button type='button' class='slick-prev pull-left'></button>",
-	// nextArrow:"<button type='button' class='slick-next pull-right'></button>"
-// });
 
 
 $(".js-slider-news").slick({
@@ -129,52 +71,256 @@ $(function () {
 });
 
 
-// $(function () {
-//     objectFitImages('img');
-// });
-
-
-//matchHeight
-// jQuery(function ($) {
-//     $('.news .item').matchHeight();
-// });
 
 
 
-//fade
-// $(window).on('scroll load assessFeatureHeaders', function(){
-//     var scrollTop = $(window).scrollTop();
-//     var appearenceBuffer = 60;
-//     var windowBottom = scrollTop + $(window).height() - appearenceBuffer;
-//     $('body').toggleClass('scrolled-down', scrollTop > 0);
-//     $('.js-scrollin:not(.active)').filter(function(){
-//         var offset = $(this).offset().top;
-//         var height = $(this).outerHeight();
-//         return offset + height >= scrollTop && offset <= windowBottom;
-//     }).addClass('active');
-// });
 
 
-//backtop
-// jQuery(document).ready(function ($) {
-//     $(".js-backtop").hide();
-//     $(window).on("scroll", function () {
-//         if($(window).scrollTop()> $("#footer").offset().top - $(window).outerHeight()){
-//             $(".js-backtop").addClass("active");
-//         }
-//         else {
-//             $(".js-backtop").removeClass("active");
-//         }
-//         if ($(this).scrollTop() > 100) {
-//             $(".js-backtop").fadeIn("fast");
-//         } else {
-//             $(".js-backtop").fadeOut("fast");
-//         }
-//     });
-//     $('.js-backtop').click(function () {
-//         $('body,html').animate({
-//             scrollTop: 0
-//         }, 500);
-//         return false;
-//     });
-// });
+//company
+
+$('.js-tabs li a').click(function(e){
+    e.preventDefault();
+    var tab_id = $(this).attr('data-tab');
+    
+    $('.js-tabs li').removeClass('is-active');
+    $('.tabs-content').removeClass('current');
+    
+    $(this).parent().addClass('is-active');
+    $("#"+tab_id).addClass('current');
+});
+
+$('.tabs-content input').each(function () {
+    $(this).change(function () {
+        let val_checkbox = $(this).val();
+        
+        //add item select while input check is checked
+        if($(this).prop('checked')){
+            $('.box-selected__result').append("<li class=" + val_checkbox + "><span class='txt-val'>" + val_checkbox + "</span><span class='btn-detete-selected'></span></li>");
+        }else{
+            $('.box-selected__result li').each(function () {
+                let txt_val = $(this).find('.txt-val').text();
+                if(val_checkbox == txt_val){
+                    $('.' + val_checkbox).hide();
+                }
+            })
+            
+            // $('.box-filter__label .form-control li').each(function () {
+            // 	let txt_val = $(this).find('.txt-val').text();
+            // 	if(val_checkbox == txt_val){
+            // 		$('.' + val_checkbox).hide();
+            // 	}
+            // })
+        }
+        
+        
+        //cout item selected
+        updateTotal();
+        
+        
+        //delete only item white click
+        $('.btn-detete-selected').click(function () {
+            var _this = $(this).parent().attr('class');
+            console.log($("." + _this).html());
+            $("." + _this).hide();
+            let data_checkbox = $(this).prev().text();
+            // console.log(data_checkbox);
+            $('.tabs-content input').each(function () {
+                let val_checkbox = $(this).val();
+                if(data_checkbox == val_checkbox){
+                    $(this).prop('checked', false);
+                    updateTotal();
+                }
+            })
+        })
+    })
+});
+
+
+//update skills selected on input
+$('.js-submit-skills').click(function (e) {
+    e.preventDefault();
+    $('.tabs-content input').each(function () {
+        if ($(this).prop('checked')) {
+            $('#register-form__list-skills').val($(this).val());
+        }
+    })
+    $('.c-modal').removeClass('is-show');
+})
+
+
+$('.txt-delete-all').click(function (e) {
+    e.preventDefault();
+    $('.box-selected__result li').hide();
+    $('.box-selected__heading .qty').html('(0)');
+    $('.tabs-content input').prop('checked', false);
+})
+
+
+$('.btn-delete-skills-after').click(function () {
+    $('#fillter').hide();
+    $(this).parent().hide();
+})
+
+function updateTotal() {
+    let count = 0;
+    let checkbox_el = $('.tabs-content input');
+    for (let i = 0; i < checkbox_el.length; i++) {
+        if (checkbox_el[i].checked === true) {
+            count++;
+        }
+    }
+    
+    $('.box-selected__heading .qty').html('('+count+')');
+}
+
+$('.fillter-acc__label').click(function () {
+    $(this).next().slideToggle();
+    $(this).parent().toggleClass('is-active');
+})
+
+
+$('.acc-skills__dt').click(function () {
+    $(this).next().slideToggle(100);
+    $(this).parent().toggleClass('is-active');
+})
+
+
+var skill_template = `<div class="form-grid form-grid--styles02">
+											<dl class="form-group">
+												<dt class="form-group__label">資格証明書</dt>
+												<dd class="form-group__input">
+													<a href="" class="txt-link js-qualifications">参考</a>
+													<input type="text" class="form-control" placeholder="基本情報技術者">
+												</dd>
+											</dl>
+											<dl class="form-group">
+												<dt class="form-group__label">取得日</dt>
+												<dd class="form-group__input">
+													<input type="text" placeholder="2021年06月" class="form-control form-control--date">
+												</dd>
+											</dl>
+											<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+										</div>`;
+
+var project = `<div class="box-project">
+<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+<div class="form-grid">
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label">プロジェクト名</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="プロジェクト名を入力してください。">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">開始</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="Select time">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">終了</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="Select time">
+		</dd>
+	</dl>
+</div>
+<div class="project-business">
+	<h3 class="project-business__ttl"><span>業務内容</span></h3>
+	<dl class="form-group form-group--full form-group--styles02">
+		<dt class="form-group__label"><span>*</span>プロジェクト内容</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/editor-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>組織</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-01.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>組織</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>役割</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>開発環境</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-03.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>担当業務</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-04.png" alt="担当業務">
+		</dd>
+	</dl>
+</div>
+</div>`;
+
+$('.box-project__close').click(function (e) {
+    e.preventDefault();
+    $(this).parent().remove();
+})
+
+
+var id = 2;
+$('.js-add-qualifications').click(function () {
+    // $(this).parent().append(skill_template);
+    id++;
+    $(this).before( `<div class="form-grid form-grid--styles02">
+	<dl class="form-group">
+		<dt class="form-group__label">資格証明書</dt>
+		<dd class="form-group__input">
+			<a href="" class="txt-link js-qualifications" data-id="`+ id +`">参考</a>
+			<input type="text" class="form-control" placeholder="基本情報技術者" id="`+ id +`">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">取得日</dt>
+		<dd class="form-group__input">
+			<input type="text" placeholder="2021年06月" class="form-control form-control--date">
+		</dd>
+	</dl>
+	<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+</div>` );
+    $('.box-project__close').click(function (e) {
+        e.preventDefault();
+        $(this).parent().remove();
+    })
+    $('.js-qualifications').click(function (e) {
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+        $('#qualifications').attr('data-modal', id);
+        $('#qualifications').addClass('is-show');
+    });
+})
+
+$('.js-add-project').click(function (e) {
+    e.preventDefault();
+    $(this).before(project);
+    $('.box-project__close').click(function (e) {
+        e.preventDefault();
+        $(this).parent().remove();
+    })
+})
+
+
+$('.js-submit-qualifications').click(function (e) {
+    e.preventDefault();
+    var data_modal = $(this).closest('.c-modal').attr('data-modal');
+    console.log(data_modal);
+    $('.qualifications-content__wp input').each(function () {
+        if ($(this).prop('checked')) {
+            $('#' + data_modal).val($(this).val());
+        }
+    })
+    $('.c-modal').removeClass('is-show');
+})

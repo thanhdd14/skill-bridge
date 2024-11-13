@@ -1,0 +1,66 @@
+@use "vars" as *;
+
+#page-project {
+	@include mq(md-min){
+		padding-top: 100px;
+	}
+}
+
+.sec-project {
+	padding: 0 0 30px;
+	@include mq(){
+		background: white;
+		padding-bottom: 0;
+	}
+}
+
+.project-heading{
+	@include flex(end,0,wrap);
+	margin: -55px 0 30px 0;
+	@include mq(){
+		display: none;
+	}
+	&__item{
+		width: 230px;
+		padding: 0 10px;
+		&--search{
+			width: 315px;
+			padding-right: 0;
+			.heading-box__input{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.project-custom-sp{
+	display: none;
+	@include mq(){
+		@include flex(between,center,wrap);
+		padding: 30px 0;
+		.c-ttl__02{
+			margin-bottom: 0;
+			span{
+				&:after{
+					display: none;
+				}
+			}
+		}
+	}
+
+}
+
+.project-new.news-box{
+	margin-bottom: 20px;
+	.news-box{
+		&__item{
+
+			@include mq(md-min){
+				background: white;
+				box-shadow: 0 4px 8px 0 rgba(black,0.16);
+				width: calc(50% - 15px);
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

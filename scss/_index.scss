@@ -773,9 +773,9 @@
 				cursor: pointer;
 				&:after{
 					content: "";
-					width: 16px;
-					height: 16px;
-					background: url("../img/x-close.png")no-repeat;
+					width: 20px;
+					height: 20px;
+					background: url("../img/x-close03.png")no-repeat;
 					position: absolute;
 					@include v-align;
 					right: 10px;
