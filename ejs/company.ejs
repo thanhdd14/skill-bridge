@@ -17,12 +17,16 @@
 							<img src="<%= RELATIVE_PATH %>img/search-status.png" alt="search-status">
 							<span>詳細検索</span>
 						</a>
-						<a href="" class="c-btn__02">
+						<a href="" class="c-btn__02 js-show-modal" data-modal="fillter">
 							<img src="<%= RELATIVE_PATH %>img/magic-wand-01.png" alt="AI Search">
 							<span>AI Search</span>
 						</a>
 					</div>
 				</div>
+			</div>
+			<div class="box-selected box-selected--styles02 company-curent">
+				<span class="company-curent__ttl">現在の検索条件:</span>
+				<ul class="box-selected__result"></ul>
 			</div>
 			<ul class="pickup-list mbpc-40 mbsp-30">
 				<li class="pickup-list__item">
@@ -429,7 +433,7 @@
 
 
 
-	<div class="c-modal c-modal--engineer active" id="fillter">
+	<div class="c-modal c-modal--engineer " id="fillter">
 		<div class="c-modal__wp">
 			<form action="" method="post" class="c-modal__fillter">
 				<h3 class="c-modal__fillter-ttl">詳細検索</h3>
@@ -696,7 +700,7 @@
 					<ul class="box-selected__result"></ul>
 				</div>
 				<div class="c-modal__control">
-					<button class="c-modal__submit c-modal__submit--gray js-cancel c-btn__02 c-btn__02--gray c-ft--serif">キャンセル</button>
+					<button class="c-modal__submit c-modal__submit--gray js-cancel c-btn__02 c-btn__02--gray c-ft--serif js-cancel">キャンセル</button>
 					<button type="button" class="c-btn__02">
 						<img src="<%= RELATIVE_PATH %>img/magic-wand-01.png" alt="AI Search">
 						<span>AI Search</span>
@@ -707,29 +711,12 @@
 
 			<div class="c-modal__filltersp">
 				<div class="c-modal__filltersp-heading">
-					<button class="c-modal__filltersp-cancel js-cancel"><img src="../img/common/arrow-left.png" alt="Close" width="24"></button>
-					<h3 class="c-modal__filltersp-ttl">Fillter</h3>
-					<button class="txt-search">検索</button>
+					<button class="c-modal__filltersp-cancel js-cancel"><img src="./img/arrow-left.png" alt="Close" width="24"></button>
+					<h3 class="c-modal__filltersp-ttl">詳細検索</h3>
+
 				</div>
 				<div class="scroll">
-					<dl class="c-modal__filltersp-dl">
-						<dt class="c-modal__filltersp-dt">実務経験</dt>
-						<dd class="c-modal__filltersp-dd">
-							<input type="text" placeholder="xx年" class="form-control">
-						</dd>
-					</dl>
-					<dl class="c-modal__filltersp-dl mb-0">
-						<dt class="c-modal__filltersp-dt">スキルで探す</dt>
-						<dd class="c-modal__filltersp-dd">
-							<div class="box-selected">
-								<div class="box-selected__heading">
-									<h3 class="c-ttl__04">Selected<span class="qty">(0)</span></h3>
-									<button class="txt-delete-all">全て削除</button>
-								</div>
-								<ul class="box-selected__result"></ul>
-							</div>
-						</dd>
-					</dl>
+
 					<dl class="fillter-acc">
 						<dt class="fillter-acc__label">担当業務<span>(1)</span></dt>
 						<dd class="fillter-acc__content tabs-content">
@@ -742,14 +729,68 @@
 								</li>
 								<li>
 									<label>
-										<input type="checkbox" class="form-checbox" value="要件定義">
-										<span class="txt-checkbox"><span>要件定義</span></span>
+										<input type="checkbox" class="form-checbox" value="要件定義 ">
+										<span class="txt-checkbox"><span>要件定義 </span></span>
 									</label>
 								</li>
 								<li>
 									<label>
 										<input type="checkbox" class="form-checbox" value="デザイン">
 										<span class="txt-checkbox"><span>デザイン</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="基本設計">
+										<span class="txt-checkbox"><span>基本設計</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="詳細設計">
+										<span class="txt-checkbox"><span>詳細設計</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="開発">
+										<span class="txt-checkbox"><span>開発</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="テスト">
+										<span class="txt-checkbox"><span>テスト</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="ヘルプデスク">
+										<span class="txt-checkbox"><span>ヘルプデスク</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="構築、設定">
+										<span class="txt-checkbox"><span>構築、設定</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="監視">
+										<span class="txt-checkbox"><span>監視</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="テクニカルサポート">
+										<span class="txt-checkbox"><span>テクニカルサポート</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="運用保守">
+										<span class="txt-checkbox"><span>運用保守</span></span>
 									</label>
 								</li>
 							</ul>
@@ -830,7 +871,41 @@
 							</ul>
 						</dd>
 					</dl>
+					<dl class="c-modal__filltersp-dl mb-0">
+						<dd class="c-modal__filltersp-dd">
+							<div class="box-selected">
+								<div class="box-selected__heading box-selected__heading--cusotm">
+									<button class="txt-delete-all">全て削除</button>
+									<h3 class="c-ttl__04 c-ttl__04--custom">選択済み<span class="qty">(0)</span></h3>
+									<div class="custom--box">
+										<ul class="box-selected__result"></ul>
+									</div>
+								</div>
+
+							</div>
+							<div class="c-modal__control">
+								<div class="c-modal__control-item"><button class="c-modal__submit c-modal__submit--gray js-cancel c-btn__02 c-btn__02--gray c-ft--serif js-cancel">キャンセル</button></div>
+								<div class="c-modal__control-item"><a href="#" class="c-btn__02 c-modal__submit js-submit-skills">検索</a></div>
+							</div>
+						</dd>
+					</dl>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup--clear ">
+		<span class="popup-close js-close-popup"></span>
+		<div class="popup-show">
+			<span class="popup-show__close js-close-popup"></span>
+			<div class="popup-show__heading">
+				<span class="popup-show__heading-ttl">削除の確認</span>
+			</div>
+			<div class="popup-show--clear">
+				すべて選択して削除をしますか。
+			</div>
+			<div class="popup-show--clear-sub">
+				<span class="c-btn__02 c-btn__02--gray js-close-popup">いいえ</span>
+				<span class="c-btn__02 c-btn__02--blue clear-option">はい</span>
 			</div>
 		</div>
 	</div>

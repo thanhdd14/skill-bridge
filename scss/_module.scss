@@ -78,9 +78,12 @@ select.form-control{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+
 }
 
-
+select:required:invalid {
+	color: #94A3B8;
+}
 
 .pagination{
 	@include flex(center,center,wrap);
@@ -199,6 +202,7 @@ select.form-control{
 	max-width: 220px;
 	padding: 5px 20px 5px 75px;
 	border-radius: 60px;
+	z-index: 99;
 	@include mq(){
 		width: 60px;
 		height: 60px;

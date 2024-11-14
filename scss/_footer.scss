@@ -387,6 +387,36 @@
 			}
 		}
 	}
+	&--clear{
+		.popup-show{
+			max-width: 447px;
+
+			padding: 20px;
+			.popup-show__heading{
+				text-align: left;
+			}
+			&--clear{
+				padding: 30px 15px;
+				@include font-size(16);
+				text-align: center;
+				border-top: 1px solid #E2E8F0;
+				border-bottom: 1px solid #E2E8F0;
+				margin-bottom: 15px;
+				&-sub{
+					@include flex(end,center,wrap);
+					.c-btn__02{
+						width: 110px;
+						border-radius: 10px;
+						margin-left: 10px;
+						@include smooth-transition;
+						&:hover{
+							opacity: 0.7;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .information-block{

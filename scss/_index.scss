@@ -755,7 +755,11 @@
 		display: block;
 		@include font-size(16);
 		color: #64748B;
-		margin-bottom: 10px;
+		padding: 0 12px 0 0;
+		@include mq(){
+			width: 100%;
+			margin-bottom: 15px;
+		}
 	}
 	&__list{
 		@include flex(0,0,wrap);

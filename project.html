@@ -70,13 +70,15 @@
 				<div class="inner">
 					<div class="project-heading">
 						<div class="project-heading__item">
-							<select class="form-control">
-								<option value="">言語/テクノロジー</option>
+							<select required class="form-control">
+								<option value="" disabled="disabled" selected="selected">言語/テクノロジー</option>
+								<option value="">1</option>
 							</select>
 						</div>
 						<div class="project-heading__item">
-							<select class="form-control">
-								<option value="">言語/業務</option>
+							<select required class="form-control">
+								<option value="" disabled="disabled" selected="selected">言語/業務</option>
+								<option value="">1</option>
 							</select>
 						</div>
 						<div class="project-heading__item project-heading__item--search">
@@ -87,14 +89,6 @@
 								</button>
 							</div>
 						</div>
-					</div>
-					<div class="project-custom-sp">
-						<h3 class="c-ttl__02">
-							<span>開発実績</span>
-						</h3>
-						<a href="" class="c-btn__01">
-							<span>一覧</span>
-						</a>
 					</div>
 					<div class="project-new news-box">
 						<div class="news-box__item">
@@ -352,7 +346,7 @@
 			<span>この企業について問い合わせる</span>
 		</a>
 		<div class="popup popup--login">
-			<span class="popup-close"></span>
+			<span class="popup-close js-close-popup"></span>
 			<div class="popup-show">
 				<span class="popup-show__ttl">ログイン</span>
 				<p> ログインをすることで、以下の機能が無料でご利用できます。 </p>
@@ -370,7 +364,8 @@
 			<div class="popup-show">
 				<span class="popup-show__close js-close-popup"></span>
 				<div class="popup-show__heading">
-					<span class="popup-show__heading-ttl">詳細検索</span>
+					<span class="popup-show__heading-ttl pc">詳細検索</span>
+					<span class="popup-show__heading-ttl sp">一般情報</span>
 				</div>
 				<div class="popup-show__information">
 					<div class="popup-show__information-left">
@@ -468,7 +463,8 @@
 			<div class="popup-show">
 				<span class="popup-show__close js-close-popup"></span>
 				<div class="popup-show__heading">
-					<span class="popup-show__heading-ttl">パスワード変更</span>
+					<span class="popup-show__heading-ttl pc">詳細検索</span>
+					<span class="popup-show__heading-ttl sp">パスワード変更</span>
 				</div>
 				<div class="popup-show__information">
 					<div class="popup-show__information-left pc">
@@ -552,7 +548,8 @@
 			<div class="popup-show">
 				<span class="popup-show__close js-close-popup"></span>
 				<div class="popup-show__heading">
-					<span class="popup-show__heading-ttl">パスワード変更</span>
+					<span class="popup-show__heading-ttl pc">詳細検索</span>
+					<span class="popup-show__heading-ttl sp">ブックマーク</span>
 				</div>
 				<div class="popup-show__information">
 					<div class="popup-show__information-left pc">
@@ -731,7 +728,8 @@
 			<div class="popup-show">
 				<span class="popup-show__close js-close-popup"></span>
 				<div class="popup-show__heading">
-					<span class="popup-show__heading-ttl">パスワード変更</span>
+					<span class="popup-show__heading-ttl pc">詳細検索</span>
+					<span class="popup-show__heading-ttl sp">お気に入り</span>
 				</div>
 				<div class="popup-show__information">
 					<div class="popup-show__information-left pc">

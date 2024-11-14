@@ -183,8 +183,22 @@
 			&__control{
 				@include flex(end, center);
 				padding: 30px 30px 0;
+				@include mq(){
+					justify-content: space-between;
+					padding: 15px 0;
+					&-item{
+						width: calc(50% - 10px);
+					}
+				}
 				.c-btn__01,.c-btn__02{
 					margin: 0 10px;
+					@include mq(){
+						width: 100%;
+						margin: 0;
+						border-radius: 52px;
+						max-width: 100%;
+						height: 40px;
+					}
 				}
 			}
 		}
@@ -255,15 +269,18 @@
 		}
 	}
 	&__filltersp{
-		padding: 34px 16px;
-		border-radius: 12px;
+		padding: 34px 0 0;
 		position: relative;
+		background: #f6f8fc;
 		@include p-before(48px, 4px){
 			background: #000;
 			border-radius: 50px;
 			top: 8px;
 			left: 50%;
 			transform: translateX(-50%);
+			@include mq(){
+				display: none;
+			}
 		}
 		@include p-after(134px, 5px){
 			background: #000;
@@ -271,14 +288,18 @@
 			bottom: 8px;
 			left: 50%;
 			transform: translateX(-50%);
+			@include mq(){
+				display: none;
+			}
 		}
 		@include mq(md-min){
 			display: none;
 		}
 		&-heading{
-			@include flex(between, center);
+			@include flex(0, center);
 			@include font-size(16);
 			margin-bottom: 16px;
+			padding: 0 15px;
 			.txt-search{
 				@include font-size(14);
 				color: #0072F8;
@@ -289,20 +310,25 @@
 			}
 		}
 		&-ttl{
-			font-weight: 800;
+			font-size: 14px;
+			display: block;
+			font-weight: bold;
+			margin: 0 0 0 -50px;
 		}
 		&-cancel{
-			width: 24px;
+			width: 80px;
 			height: 24px;
 			border: none;
 			outline: 0;
 			padding: 0;
 			background: none;
+			text-align: left;
+			position: relative;
+			z-index: 1;
 		}
 		&-dl{
-			margin-bottom: 16px;
-			padding-bottom: 16px;
-			border-bottom: 1px solid #E2E8F0;
+			padding: 15px;
+			background: white;
 			&:last-child{
 				margin-bottom: 0;
 				padding-bottom: 0;
@@ -320,7 +346,46 @@
 					padding: 0;
 					margin-bottom: 16px;
 					.c-ttl__04{
-						color: #F5601B;
+						color: #0F1A2A;
+					}
+					&.box-selected__heading--cusotm{
+						display: block;
+						position: relative;
+						.c-ttl__04{
+							text-align: left;
+							position: relative;
+							padding: 0 0 0 20px;
+							margin-bottom: 15px;
+							&:before{
+								content: "";
+								border: solid #0F1A2A;
+								border-width: 0 2px 2px 0;
+								display: inline-block;
+								padding: 4px;
+								transform: rotate(-45deg);
+								position: absolute;
+								top: 6px;
+								left: 0;
+							}
+							&.active{
+								&:before{
+									transform: rotate(45deg);
+									top: 3px;
+								}
+							}
+						}
+						.custom--box{
+							display: none;
+							&.active{
+								display: block;
+							}
+						}
+						.txt-delete-all{
+							position: absolute;
+							top: 0;
+							right: 0;
+							z-index: 2;
+						}
 					}
 				}
 			}
@@ -335,13 +400,14 @@
 
 
 .fillter-acc{
-	border-bottom: 1px solid #E2E8F0;
+	margin-bottom: 5px;
 	&__label{
 		@include font-size(14);
-		color: #F5601B;
+		color: #0F1A2A;
 		font-weight: 700;
-		padding: 16px 0;
+		padding: 15px;
 		position: relative;
+		background: white;
 		@include p-after(20px, 20px){
 			background: url(../img/common/arrow-down-gray.png) no-repeat center/100%;
 			top: 13px;
@@ -352,6 +418,9 @@
 	&__content{
 		display: none;
 		padding-bottom: 16px;
+		@include mq(){
+			padding-bottom: 0;
+		}
 	}
 	&.is-active{
 		.fillter-acc{
@@ -425,6 +494,8 @@
 	gap: 16px;
 	@include mq{
 		gap: 10px;
+		padding: 0 10px 15px;
+		background: white;
 	}
 	li{
 		.txt-checkbox{
@@ -513,12 +584,12 @@
 	}
 
 	&--styles02{
-		position: absolute;
-		top: 50px;
-		left: 0;
-		padding: 0 12px;
-		width: 87%;
-		overflow-x: auto;
+		//position: absolute;
+		//top: 50px;
+		//left: 0;
+		//padding: 0 12px;
+		//width: 87%;
+		//overflow-x: auto;
 		/* custom scrollbar */
 		&::-webkit-scrollbar {
 			width: 20px;
@@ -540,8 +611,6 @@
 		}
 		.box-selected{
 			&__result{
-				flex-wrap: nowrap;
-				white-space: nowrap;
 				li{
 					background: #F1F4F9;
 					border-radius: 30px;
@@ -549,22 +618,26 @@
 					display: inline-flex;
 					align-items: center;
 					justify-content: flex-start;
-					@include font-size(12);
-					color: #000;
+					@include font-size(14);
+					color: $blue;
+					@include smooth-transition;
 					&::before{
 						display: none;
+					}
+					&:hover{
+						opacity: 0.7;
 					}
 					span{
 						&.btn-detete-selected{
 							display: block;
-							width: 16px;
-							height: 16px;
-							background: url(../img/common/btn-delete-skills.png) no-repeat center/100%;
+							width: 20px;
+							height: 20px;
+							background: url(../img/x-close.png) no-repeat center / 100%;
 							margin-left: 10px;
 							position: relative;
 							z-index: 2;
 							cursor: pointer;
-							//@include fn-hover;
+							right: 0;
 						}
 					}
 				}
@@ -595,5 +668,14 @@
 		&__wp{
 			padding: 60px 30px;
 		}
+	}
+}
+
+
+.box-selected.box-selected--styles02.company-curent{
+	display: none;
+	&.active{
+		display: flex;
+		flex-wrap: wrap;
 	}
 }

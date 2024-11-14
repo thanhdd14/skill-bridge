@@ -18,17 +18,32 @@
 	@include flex(end,0,wrap);
 	margin: -55px 0 30px 0;
 	@include mq(){
-		display: none;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		margin: 0 -15px 15px;
+		background: #f6f8fc;
+		padding: 0 15px;
 	}
 	&__item{
 		width: 230px;
 		padding: 0 10px;
+		@include mq(){
+			width: calc(50% - 7px);
+			padding: 0;
+			margin-bottom: 15px;
+		}
 		&--search{
 			width: 315px;
 			padding-right: 0;
+			@include mq(){
+				padding: 0;
+				width: 100%;
+			}
 			.heading-box__input{
 				width: 100%;
 			}
+
 		}
 	}
 }

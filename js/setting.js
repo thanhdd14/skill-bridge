@@ -78,6 +78,20 @@ $(function () {
 
 //company
 
+$('.js-show-modal').click(function (e) {
+    e.preventDefault();
+    var modal_id = $(this).attr('data-modal');
+    $('.c-modal').removeClass('is-show');
+    $('#' + modal_id).addClass('is-show');
+});
+
+$('.js-cancel').click(function (e) {
+    e.preventDefault();
+    $(this).closest('.c-modal').removeClass('is-show');
+});
+
+
+
 $('.js-tabs li a').click(function(e){
     e.preventDefault();
     var tab_id = $(this).attr('data-tab');
@@ -96,6 +110,7 @@ $('.tabs-content input').each(function () {
         //add item select while input check is checked
         if($(this).prop('checked')){
             $('.box-selected__result').append("<li class=" + val_checkbox + "><span class='txt-val'>" + val_checkbox + "</span><span class='btn-detete-selected'></span></li>");
+            $('.company-curent').addClass("active");
         }else{
             $('.box-selected__result li').each(function () {
                 let txt_val = $(this).find('.txt-val').text();
@@ -150,10 +165,19 @@ $('.js-submit-skills').click(function (e) {
 
 $('.txt-delete-all').click(function (e) {
     e.preventDefault();
+    $('.popup--clear').addClass("active");
+});
+
+$('.clear-option').click(function (e) {
+    e.preventDefault();
     $('.box-selected__result li').hide();
     $('.box-selected__heading .qty').html('(0)');
     $('.tabs-content input').prop('checked', false);
-})
+    $('.c-ttl__04--custom').removeClass("active");
+    $('.custom--box').removeClass("active");
+    $('.popup').removeClass("active");
+});
+
 
 
 $('.btn-delete-skills-after').click(function () {
@@ -323,4 +347,8 @@ $('.js-submit-qualifications').click(function (e) {
         }
     })
     $('.c-modal').removeClass('is-show');
-})
+});
+$('.box-selected__heading--cusotm .c-ttl__04').on('click', function(){
+    $(this).toggleClass("active");
+    $(this).next(".custom--box").toggleClass("active");
+});
