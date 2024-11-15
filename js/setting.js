@@ -171,7 +171,7 @@ $('.txt-delete-all').click(function (e) {
 $('.clear-option').click(function (e) {
     e.preventDefault();
     $('.box-selected__result li').hide();
-    $('.box-selected__heading .qty').html('(0)');
+    $('.box-selected__heading .qty').html('');
     $('.tabs-content input').prop('checked', false);
     $('.c-ttl__04--custom').removeClass("active");
     $('.custom--box').removeClass("active");

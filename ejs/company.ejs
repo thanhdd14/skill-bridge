@@ -13,11 +13,11 @@
 				</div>
 				<div class="heading-box--right">
 					<div class="heading-box__note">
-						<a href="" class="c-btn__02">
+						<a href="" class="c-btn__02 js-show-modal" data-modal="fillter">
 							<img src="<%= RELATIVE_PATH %>img/search-status.png" alt="search-status">
 							<span>詳細検索</span>
 						</a>
-						<a href="" class="c-btn__02 js-show-modal" data-modal="fillter">
+						<a href="" class="c-btn__02 " >
 							<img src="<%= RELATIVE_PATH %>img/magic-wand-01.png" alt="AI Search">
 							<span>AI Search</span>
 						</a>
@@ -443,12 +443,12 @@
 						<h2 class="c-ttl__04">カテゴリー</h2>
 						<div class="col-type__wp">
 							<ul class="c-tabs js-tabs">
-								<li class="is-active"><a href="#" data-tab="tab01">会社種別<span class="qty">(1)</span></a></li>
-								<li><a href="#" data-tab="tab02">企業業界</a></li>
-								<li><a href="#" data-tab="tab03">企業規模</span></a></li>
-								<li><a href="#" data-tab="tab04">スキル</a></li>
-								<li><a href="#" data-tab="tab05">得意な分野 <span class="qty">(1)</span></a></li>
-								<li><a href="#" data-tab="tab06">拠点</a></li>
+								<li class="is-active"><a href="#" data-tab="tab01">会社種別<span class="qty"></span></a></li>
+								<li><a href="#" data-tab="tab02">企業業界<span class="qty"></span></a></li>
+								<li><a href="#" data-tab="tab03">企業規模</span><span class="qty"></span></a></li>
+								<li><a href="#" data-tab="tab04">スキル<span class="qty"></span></a></li>
+								<li><a href="#" data-tab="tab05">得意な分野 <span class="qty"></span></a></li>
+								<li><a href="#" data-tab="tab06">拠点<span class="qty"></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -694,7 +694,7 @@
 				</div>
 				<div class="box-selected">
 					<div class="box-selected__heading">
-						<h3 class="c-ttl__04 c-fc--grey">選択済み<span class="qty">(0)</span></h3>
+						<h3 class="c-ttl__04 c-fc--grey">選択済み<span class="qty"></span></h3>
 						<button class="txt-delete-all">全て削除</button>
 					</div>
 					<ul class="box-selected__result"></ul>
@@ -718,7 +718,7 @@
 				<div class="scroll">
 
 					<dl class="fillter-acc">
-						<dt class="fillter-acc__label">担当業務<span>(1)</span></dt>
+						<dt class="fillter-acc__label">会社種別 <span class="qty"></span></dt>
 						<dd class="fillter-acc__content tabs-content">
 							<ul class="list-skills">
 								<li>
@@ -797,7 +797,7 @@
 						</dd>
 					</dl>
 					<dl class="fillter-acc">
-						<dt class="fillter-acc__label">言語・フレームワーク</dt>
+						<dt class="fillter-acc__label">企業業界<span class="qty"></span></dt>
 						<dd class="fillter-acc__content tabs-content">
 							<ul class="list-skills">
 								<li>
@@ -822,7 +822,7 @@
 						</dd>
 					</dl>
 					<dl class="fillter-acc">
-						<dt class="fillter-acc__label">DB (2)</dt>
+						<dt class="fillter-acc__label">企業規模 <span class="qty"></span></dt>
 						<dd class="fillter-acc__content tabs-content">
 							<ul class="list-skills">
 								<li>
@@ -847,7 +847,57 @@
 						</dd>
 					</dl>
 					<dl class="fillter-acc">
-						<dt class="fillter-acc__label">その他ネットワーク、クラウド等</dt>
+						<dt class="fillter-acc__label">スキル <span class="qty"></span></dt>
+						<dd class="fillter-acc__content tabs-content">
+							<ul class="list-skills">
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="企画">
+										<span class="txt-checkbox"><span>企画</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="要件定義">
+										<span class="txt-checkbox"><span>要件定義</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="デザイン">
+										<span class="txt-checkbox"><span>デザイン</span></span>
+									</label>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="fillter-acc">
+						<dt class="fillter-acc__label">得意な分野<span class="qty"></span></dt>
+						<dd class="fillter-acc__content tabs-content">
+							<ul class="list-skills">
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="企画">
+										<span class="txt-checkbox"><span>企画</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="要件定義">
+										<span class="txt-checkbox"><span>要件定義</span></span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" class="form-checbox" value="デザイン">
+										<span class="txt-checkbox"><span>デザイン</span></span>
+									</label>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="fillter-acc">
+						<dt class="fillter-acc__label">拠点 <span class="qty"></span></dt>
 						<dd class="fillter-acc__content tabs-content">
 							<ul class="list-skills">
 								<li>
@@ -876,7 +926,7 @@
 							<div class="box-selected">
 								<div class="box-selected__heading box-selected__heading--cusotm">
 									<button class="txt-delete-all">全て削除</button>
-									<h3 class="c-ttl__04 c-ttl__04--custom">選択済み<span class="qty">(0)</span></h3>
+									<h3 class="c-ttl__04 c-ttl__04--custom">選択済み<span class="qty"></span></h3>
 									<div class="custom--box">
 										<ul class="box-selected__result"></ul>
 									</div>
