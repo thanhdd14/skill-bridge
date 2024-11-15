@@ -285,3 +285,40 @@ Component
 
 
 
+.tooltip-hv{
+	position: relative;
+	z-index: 99;
+	&:hover{
+		opacity: 1;
+		.tooltip-box{
+			opacity: 1;
+			visibility: visible;
+		}
+
+	}
+
+}
+.tooltip-box{
+	background: white;
+	border-radius: 16px;
+	@include font-size(14);
+	font-weight: 400;
+	color: #0F1A2A;
+	padding: 15px;
+	@include smooth-transition;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: calc(100% + 15px);
+	z-index: 9;
+	left: calc(50%);
+	width: 270px;
+	text-align: left;
+	border: 1px solid #E2E8F0;
+	&__ttl{
+		display: block;
+		font-weight: bold;
+		@include font-size(16);
+		margin-bottom: 10px;
+	}
+}

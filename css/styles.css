@@ -1574,6 +1574,46 @@ Component
   transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.tooltip-hv {
+  position: relative;
+  z-index: 99;
+}
+.tooltip-hv:hover {
+  opacity: 1;
+}
+.tooltip-hv:hover .tooltip-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-box {
+  background: white;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #0F1A2A;
+  padding: 15px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: calc(100% + 15px);
+  z-index: 9;
+  left: 50%;
+  width: 270px;
+  text-align: left;
+  border: 1px solid #E2E8F0;
+}
+.tooltip-box__ttl {
+  display: block;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
 main {
   padding-top: 73px;
 }
