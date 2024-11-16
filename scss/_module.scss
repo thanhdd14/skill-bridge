@@ -1,18 +1,26 @@
 @use "vars" as *;
 
 main{
-	padding-top: 73px;
+	padding-top: 88px;
 	@include mq(tb){
 		padding-top: 53px;
 	}
 }
 
+@include mq(md-min){
+	#page-index {
+		padding-top: 0;
+	}
+}
 
 .inner {
 	display: block;
 	max-width: 1320px;
 	padding: 0 15px;
 	margin: 0 auto;
+	@include mq(){
+		padding: 0 16px;
+	}
 }
 
 

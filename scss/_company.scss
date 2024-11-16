@@ -1,7 +1,7 @@
 @use "vars" as *;
 .heading-box{
 	@include flex(0,0,wrap);
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	&--left{
 		width: 50%;
 		@include flex(0,center,wrap);
@@ -11,6 +11,10 @@
 		a{
 			display: block;
 			color: $blue;
+			@include font-size(14);
+			&:hover{
+				text-decoration: underline;
+			}
 			@include mq(){
 				display: none;
 			}
@@ -24,7 +28,7 @@
 	}
 	&__input{
 		position: relative;
-		width: calc(100% - 125px);
+		width: calc(100% - 145px);
 		margin: 0 15px 0 0;
 		@include mq(){
 			width: 100%;
@@ -103,5 +107,12 @@
 			width: 100px;
 			margin-bottom: 15px;
 		}
+	}
+}
+
+
+@include mq(){
+	#page-company .sec-pickup {
+		padding: 20px 0;
 	}
 }

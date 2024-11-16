@@ -14,6 +14,9 @@
 	opacity: 0;
 	visibility: hidden;
 	@include smooth-transition;
+	&__close{
+		cursor: pointer;
+	}
 	&__btn-close{
 		width: 40px;
 		height: 40px;
@@ -394,6 +397,59 @@
 		.scroll{
 			max-height: 85vh;
 			overflow-y: auto;
+		}
+	}
+
+
+	&--contact{
+		.c-modal{
+			&__wp{
+				padding: 0 0 43px;
+			}
+			&__ttl{
+				margin-bottom: 0;
+			}
+			&__heading{
+				@include flex(between, center);
+				padding: 13px 24px;
+			}
+			&__content{
+				font-family: $font-jp;
+				padding: 47px 24px;
+				border-top: 1px solid #E2E8F0;
+				@include mq{
+					padding: 35px 24px 27px;
+				}
+			}
+		}
+	}
+	&--confirm{
+		padding: 32px 24px;
+		text-align: center;
+		@include mq{
+			padding: 28px 15px;
+		}
+		.ico-check{
+			margin-bottom: 24px;
+			display: block;
+			@include mq{
+				margin-bottom: 16px;
+			}
+		}
+		.c-modal__ttl{
+			margin-bottom: 24px;
+			@include mq{
+				margin-bottom: 16px;
+			}
+		}
+		.txt-confirm{
+			font-family: $font-jp;
+			@include font-size(16);
+			color: rgba(#000, .85);
+			margin-bottom: 30px;
+			@include mq{
+				@include font-size(14);
+			}
 		}
 	}
 }

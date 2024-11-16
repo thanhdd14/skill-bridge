@@ -13,10 +13,12 @@
 	min-height: 540px;
 	background: url("../img/mv.png")no-repeat;
 	background-position: bottom right;
+	background-size: cover;
 	@include mq(){
 		min-height: 170px;
 		background: url("../img/mv-sp.png")no-repeat;
 		background-position: bottom right;
+		background-size: cover;
 	}
 }
 .mv-block{
@@ -25,7 +27,7 @@
 		width: calc(50% - 15px);
 		border-radius: 15px;
 		border: 2px solid white;
-		padding: 30px 20px;
+		padding: 45px 20px;
 		background: url("../img/bg-item.png")no-repeat;
 		background-size: cover;
 		color: white;
@@ -95,23 +97,19 @@
 		&--right{
 			font-weight: bold;
 			text-align: right;
-			padding: 0 12px 0 0;
+			padding: 0 20px 0 0;
 			@include mq(){
 				@include font-size(14);
 			}
 			&:after{
 				content: "";
-				border: solid white;
-				border-width: 0 1px 1px 0;
-				display: inline-block;
-				padding: 4px;
-				transform: rotate(-45deg);
+				width: 16px;
+				height: 16px;
+				background: url("../img/right.png")no-repeat;
+				background-size: 100%;
 				position: absolute;
-				top: 8px;
+				@include v-align;
 				right: 0;
-				@include mq(){
-					top: 5px;
-				}
 			}
 		}
 	}
@@ -120,7 +118,7 @@
 .sec-steps{
 	.inner{
 		position: relative;
-		padding: 200px 15px 180px;
+		padding: 132px 15px 180px;
 		@include mq(){
 			padding: 90px 15px;
 		}
@@ -165,7 +163,10 @@
 		position: relative;
 		@include fts(16,25);
 		color: #64748B;
-		padding: 17px 15px 20px 100px;
+		padding: 18px 15px 32px 100px;
+		@include mq(){
+			padding: 16px 15px;
+		}
 		&-ttl{
 			display: block;
 			font-weight: bold;
@@ -182,11 +183,17 @@
 		position: absolute;
 		top: 20px;
 		left: 15px;
+		@include mq(){
+			position: static;
+		}
 	}
 }
 
 .sec-news{
 	padding: 50px 0;
+	@include mq(){
+		padding-bottom: 0;
+	}
 	&:after{
 		content: "";
 		position: absolute;
@@ -279,7 +286,7 @@
 			width: 100%;
 			padding: 0;
 			color: $blue;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 	}
 }
@@ -289,7 +296,7 @@
 	@include mq(){
 		margin: 0 -35px 0 -10px;
 		.slick-list{
-			padding: 0 20% 0 0 !important;
+			padding: 0 18% 0 0 !important;
 		}
 	}
 	&__item{
@@ -329,6 +336,9 @@
 	&__ct{
 		@include fts(16,25);
 		padding: 10px;
+		@include mq(){
+			padding: 14px 10px;
+		}
 	}
 }
 
@@ -393,6 +403,7 @@
 			margin-bottom: 10px;
 			@include mq(){
 				@include font-size(14);
+				margin-bottom: 5px;
 			}
 		}
 		p{
@@ -404,6 +415,7 @@
 			-webkit-box-orient: vertical;
 			margin-bottom: 10px;
 			@include mq(){
+				margin-bottom: 6px;
 				-webkit-line-clamp: 4;
 				height: 70px;
 			}
@@ -415,6 +427,7 @@
 			padding: 10px 0;
 			@include mq(){
 				margin-left: -115px;
+				padding: 8px 0;
 			}
 			&:last-child{
 				border-bottom: none;
@@ -518,6 +531,12 @@
 			display: none;
 		}
 	}
+	&--custom{
+		padding-bottom: 0;
+	}
+	&--like{
+		padding-bottom: 0;
+	}
 	.inner{
 		position: relative;
 		z-index: 1;
@@ -531,17 +550,18 @@
 
 .pickup-list{
 	@include flex(0,0,wrap);
-	margin: 0 -10px 100px;
+	margin: 0 -15px 72px;
 	@include mq(){
 		margin: 0 -7px 50px;
 	}
 	&__item{
 		width: 25%;
-		padding: 0 10px;
+		padding: 0 15px;
 		margin-bottom: 20px;
 		@include mq(){
 			width: 50%;
 			padding: 0 7px;
+			margin-bottom: 15px;
 		}
 	}
 	&__box{
@@ -550,7 +570,7 @@
 		background: url("../img/bg-item-02.png")no-repeat;
 		background-size: cover;
 		background-position: top center;
-		padding: 15px 15px 66px;
+		padding: 17px 15px 68px;
 		position: relative;
 		@include font-size(14);
 		border-radius: 12px;
@@ -560,6 +580,7 @@
 		overflow: hidden;
 		@include mq(){
 			padding: 0;
+			background: white;
 		}
 		&:after{
 			content: "";
@@ -584,7 +605,8 @@
 		margin-bottom: 15px;
 		@include mq(){
 			order: 1;
-			padding: 10px 7px 0;
+			padding: 2px 7px 0;
+			@include font-size(12);
 		}
 	}
 	&__img{
@@ -603,11 +625,14 @@
 		@include mq(){
 			order: 3;
 			width: 100%;
-			padding: 0 7px 61px 7px;
+			padding: 0 7px 47px 7px;
 		}
 		dl{
 			@include flex(between,center,wrap);
 			margin-bottom: 10px;
+			@include mq(){
+				margin-bottom: 5px;
+			}
 			&:last-child{
 				margin-bottom: 0;
 			}

@@ -77,7 +77,17 @@ Component
 // Common Text style
 .c-txt{
 	&__basic{
-
+		@include fts(18, 28);
+		font-weight: 500;
+		@include mq{
+			@include font-size(14);
+		}
+	}
+	&__intro{
+		text-align: center;
+		font-weight: 500;
+		font-size: clamp(1.4rem, 1.157rem + 0.647vw, 2.4rem);
+		line-height: 1.5;
 	}
 }
 
@@ -94,7 +104,7 @@ Component
 		color: $blue;
 		@include font-size(40);
 		font-weight: bold;
-		margin-bottom: 50px;
+		margin-bottom: 58px;
 		@include mq(){
 			@include font-size(24);
 			margin-bottom: 30px;
@@ -137,6 +147,44 @@ Component
 		@include font-size(16);
 		text-align: center;
 		font-weight: bold;
+		@include mq(){
+			@include font-size(14);
+		}
+	}
+	&__05{
+		text-align: center;
+		position: relative;
+		.txt-lg{
+			font-family: $font-Pill;
+			font-size: clamp(12rem, 10.058rem + 5.178vw, 20rem);
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #D9E1F9;
+			color: transparent;
+			font-weight: 700;
+			line-height: 1;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			width: max-content;
+			display: block;
+		}
+		.txt-sm{
+			position: absolute;
+			top: 38%;
+			transform: translateY(-50%);
+			color: #4169E1;
+			left: 0;
+			right: 0;
+			font-size: clamp(1.6rem, 1.309rem + 0.777vw, 2.8rem);
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: 6px;
+			@include mq{
+				letter-spacing: 3px;
+				white-space: nowrap;
+				top: 44%;
+			}
+		}
 	}
 }
 
@@ -191,6 +239,10 @@ Component
 			width: 48px;
 			border-radius: 50%;
 		}
+		&.tooltip-hv{
+			background: rgb(130,12,240);
+			background: linear-gradient(90deg, rgba(130,12,240,1) 0%, rgba(114,95,235,1) 32%, rgba(55,126,255,1) 66%, rgba(78,235,255,1) 100%);
+		}
 		img{
 			display: block;
 			width: 20px;
@@ -229,6 +281,9 @@ Component
 			background: #E2E8F0;
 			color: #1E2A3B;
 			width: 150px;
+			@include mq(){
+				width: 140px;
+			}
 		}
 	}
 	&__04{
@@ -248,6 +303,9 @@ Component
 		position: relative;
 		@include smooth-transition;
 		margin: 0 auto;
+		@include mq(){
+			width: 140px;
+		}
 		&:after{
 			content: "";
 			width: 24px;
@@ -261,7 +319,81 @@ Component
 		&:hover{
 			opacity: 0.7;
 		}
-
+	}
+	&__05{
+		max-width: 455px;
+		height: 110px;
+		border-radius: 82px;
+		background: rgb(55,85,243);
+		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		@include font-size(36);
+		color: #fff;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		font-weight: 700;
+		box-shadow: 0 5px 20px rgba(55,85,243,0.5);
+		margin: 0 auto;
+		line-height: 1.2;
+		position: relative;
+		letter-spacing: 7px;
+		@include mq{
+			@include font-size(24);
+			max-width: 310px;
+			height: 80px;
+			letter-spacing: 8px;
+			padding-right: 25px;
+		}
+		@include p-after(43px, 15px){
+			background: url(../img/service/arrow-btn.png) no-repeat center/100%;
+			top: calc(50% - 7.5px);
+			right: 33px;
+			@include mq{
+				width: 32px;
+				height: 12px;
+			}
+		}
+		span{
+			display: block;
+			@include font-size(16);
+			width: 100%;
+			text-align: center;
+			letter-spacing: 3px;
+			@include mq{
+				@include font-size(14);
+				margin-bottom: 4px;
+				letter-spacing: 0;
+			}
+		}
+	}
+	&__06{
+		width: 180px;
+		height: 60px;
+		border-radius: 50px;
+		@include flex(center, center);
+		background: rgb(65,105,225);
+		background: linear-gradient(140deg, rgba(65,105,225,1) 0%, rgba(90,131,255,1) 100%);
+		margin: 0 auto;
+		color: #fff;
+		@include font-size(16);
+		font-weight: 500;
+		position: relative;
+		outline: 0;
+		border: none;
+		cursor: pointer;
+		@include p-after(24px, 24px){
+			background: rgba(#fff, 0.55);
+			border-radius: 50%;
+			top: calc(50% - 12px);
+			right: 12px;
+		}
+		@include p-before(10px, 10px){
+			background: #fff;
+			border-radius: 50%;
+			top: calc(50% - 5px);
+			right: 19px;
+		}
 	}
 }
 

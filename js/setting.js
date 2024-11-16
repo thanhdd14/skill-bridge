@@ -83,11 +83,22 @@ $('.js-show-modal').click(function (e) {
     var modal_id = $(this).attr('data-modal');
     $('.c-modal').removeClass('is-show');
     $('#' + modal_id).addClass('is-show');
+    $('body').addClass('has-modal');
+    $('html').addClass("js-locked");
+
+
+    //height modal > 100vh
+
+    if ($('#' + modal_id).find('.c-modal__wp').outerHeight() > $(window).height()) {
+        $('#' + modal_id).addClass('flex-start');
+    }
 });
 
 $('.js-cancel').click(function (e) {
     e.preventDefault();
     $(this).closest('.c-modal').removeClass('is-show');
+    $('body').removeClass('has-modal');
+    $('html').removeClass("js-locked");
 });
 
 
@@ -106,7 +117,7 @@ $('.js-tabs li a').click(function(e){
 $('.tabs-content input').each(function () {
     $(this).change(function () {
         let val_checkbox = $(this).val();
-        
+        let data_tab = $(this).attr('data-tab');
         //add item select while input check is checked
         if($(this).prop('checked')){
             $('.box-selected__result').append("<li class=" + val_checkbox + "><span class='txt-val'>" + val_checkbox + "</span><span class='btn-detete-selected'></span></li>");
@@ -131,19 +142,26 @@ $('.tabs-content input').each(function () {
         //cout item selected
         updateTotal();
         
-        
-        //delete only item white click
+        //count item selected each tab
+        updateQtyTab(data_tab);
+
+
+        updateQtyTabSP(data_tab);
+
+        //delete only item while click
         $('.btn-detete-selected').click(function () {
             var _this = $(this).parent().attr('class');
-            console.log($("." + _this).html());
             $("." + _this).hide();
             let data_checkbox = $(this).prev().text();
-            // console.log(data_checkbox);
             $('.tabs-content input').each(function () {
                 let val_checkbox = $(this).val();
                 if(data_checkbox == val_checkbox){
                     $(this).prop('checked', false);
                     updateTotal();
+
+                    updateQtyTab(data_tab);
+
+                    updateQtyTabSP(data_tab);
                 }
             })
         })
@@ -176,6 +194,8 @@ $('.clear-option').click(function (e) {
     $('.c-ttl__04--custom').removeClass("active");
     $('.custom--box').removeClass("active");
     $('.popup').removeClass("active");
+    $('.c-tabs').find('.qty').html('');
+    $('.fillter-acc__label').find('.qty').html('');
 });
 
 
@@ -196,6 +216,46 @@ function updateTotal() {
     
     $('.box-selected__heading .qty').html('('+count+')');
 }
+
+
+//update qty each only tab
+function updateQtyTab(dataTab) {
+    let count = 0;
+    let checkbox_el_tab = $('.tabs-content').find("[data-tab='" + dataTab + "']");
+    
+
+    if (checkbox_el_tab.length > 0) {
+        for (let i = 0; i < checkbox_el_tab.length; i++) {
+            if (checkbox_el_tab[i].checked === true) {
+                count++;
+            }
+        }
+        $('.c-tabs').find("[data-tab='" + dataTab + "']").find('.qty').html('('+count+')');
+    } else {
+        $('.c-tabs').find("[data-tab='" + dataTab + "']").find('.qty').html('');
+    }
+}
+
+//update qty each only tab
+function updateQtyTabSP(dataTab) {
+    let count = 0;
+    let checkbox_el_tab = $('.tabs-content').find("[data-tab='" + dataTab + "']");
+    
+
+    if (checkbox_el_tab.length > 0) {
+        for (let i = 0; i < checkbox_el_tab.length; i++) {
+            if (checkbox_el_tab[i].checked === true) {
+                count++;
+            }
+        }
+        $('.fillter-acc').find("[data-tab='" + dataTab + "']").find('.qty').html('('+count+')');
+    } else {
+        $('.fillter-acc').find("[data-tab='" + dataTab + "']").find('.qty').html('');
+    }
+}
+
+
+
 
 $('.fillter-acc__label').click(function () {
     $(this).next().slideToggle();
