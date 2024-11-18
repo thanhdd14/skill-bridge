@@ -4350,6 +4350,43 @@ select:required:invalid {
   #page-company .sec-pickup {
     padding: 20px 0;
   }
+  #page-company .pickup-list__item {
+    width: 100%;
+  }
+  #page-company .pickup-list__box {
+    background: url(../img/bg-item-02.png) no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 9px 15px 45px;
+  }
+  #page-company .pickup-list__box:after {
+    bottom: auto;
+    top: 13px;
+    right: 20px;
+  }
+  #page-company .pickup-list__ttl {
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 20px;
+  }
+  #page-company .pickup-list__img {
+    width: 56px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #page-company .pickup-list__ct {
+    width: calc(100% - 56px);
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    padding: 0 7px 35px 7px;
+  }
+  #page-company .pickup-list__ct dl {
+    margin-bottom: 10px;
+  }
 }
 .sec-detail {
   padding: 0 0 50px;
