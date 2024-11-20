@@ -37,7 +37,7 @@ https://raw.githack.com/thanhdd14/skill-bridge/main/popup-ky-su-quan-tam.html
 
 https://raw.githack.com/thanhdd14/skill-bridge/main/popup-thong-bao-thanh-cong.html
 
-https://github.com/thanhdd14/skill-bridge/blob/main/popup-thong-tin-ca-nhan.html
+https://raw.githack.com/thanhdd14/skill-bridge/main/popup-thong-tin-ca-nhan.html
 
 https://raw.githack.com/thanhdd14/skill-bridge/main/popup-timkiem.html
 
