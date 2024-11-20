@@ -201,6 +201,13 @@ Component
 		font-weight: bold;
 		background: rgb(55,85,243);
 		background: linear-gradient(90deg, rgba(55,85,243,1) 0%, rgba(19,127,217,1) 100%);
+		cursor: pointer;
+		border: none;
+		outline: none;
+		@include  smooth-transition;
+		&:hover{
+			opacity: 0.7;
+		}
 		@include mq(){
 			height: 40px;
 			max-width: 92px;

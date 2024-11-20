@@ -575,3 +575,33 @@
 		}
 	}
 }
+
+.register-show{
+	dl{
+		position: relative;
+		margin-bottom: 35px;
+		dt{
+			position: absolute;
+			top: -15px;
+			left: 10px;
+			background: white;
+			padding: 0 14px;
+			line-height: 1.2;
+			sup{
+				display: inline-block;
+				color: red;
+				margin: 0 5px 0 0;
+				position: relative;
+				top: 2px;
+			}
+		}
+		dd{
+			.form-control{
+				border-radius: 5px;
+			}
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
+	}
+}

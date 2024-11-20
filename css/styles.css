@@ -1471,6 +1471,16 @@ Component
   background: -webkit-gradient(linear, left top, right top, from(#3755f3), to(#137fd9));
   background: -o-linear-gradient(left, #3755f3 0%, #137fd9 100%);
   background: linear-gradient(90deg, #3755f3 0%, #137fd9 100%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.c-btn__01:hover {
+  opacity: 0.7;
 }
 @media screen and (max-width: 834px) {
   .c-btn__01 {
@@ -3113,6 +3123,42 @@ select:required:invalid {
 }
 .information-block__list li a.c-fc--red:hover:before {
   display: none;
+}
+
+.register-show dl {
+  position: relative;
+  margin-bottom: 35px;
+}
+.register-show dl dt {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  background: white;
+  padding: 0 14px;
+  line-height: 1.2;
+}
+.register-show dl dt sup {
+  display: inline-block;
+  color: red;
+  margin: 0 5px 0 0;
+  position: relative;
+  top: 2px;
+}
+.register-show dl dd .form-control {
+  border-radius: 5px;
+}
+.register-show__sub {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .sec-mv .inner {
