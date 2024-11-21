@@ -292,6 +292,7 @@
 }
 
 .news-column{
+	@include flex(0,0,wrap);
 	margin: 0 -10px;
 	@include mq(){
 		margin: 0 -35px 0 -10px;
@@ -302,6 +303,12 @@
 	&__item{
 		width: 25%;
 		padding: 10px;
+		@include mq(tb){
+			width: 33.333%;
+		}
+		@include mq(sm){
+			width: 50%;
+		}
 		a{
 			display: block;
 			border: 2px solid white;
@@ -338,6 +345,27 @@
 		padding: 10px;
 		@include mq(){
 			padding: 14px 10px;
+		}
+		p{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 2;
+			height: 50px;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+		}
+	}
+	&--block{
+		margin-bottom: 50px;
+		.news-column{
+			&__ct{
+				@include fts(14,19.6);
+				@include mq(){
+					p{
+						height: 40px;
+					}
+				}
+			}
 		}
 	}
 }
