@@ -81,6 +81,9 @@
 			@include flex(center,center,wrap);
 			padding: 0 170px 0 300px;
 		}
+		@include mq(lp){
+			padding: 0 80px 0 180px;
+		}
 		@include mq(tb){
 			display: none;
 			position: absolute;
@@ -116,6 +119,9 @@
 					color: #0F1A2A;
 					padding: 33px 15px;
 					position: relative;
+					@include mq(lp){
+						padding: 33px 10px;
+					}
 					@include mq(){
 						display: inline-block;
 						text-align: center;

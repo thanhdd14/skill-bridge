@@ -20,6 +20,7 @@ https://raw.githack.com/thanhdd14/skill-bridge/main/project.html
 
 https://raw.githack.com/thanhdd14/skill-bridge/main/service.html
 
+https://raw.githack.com/thanhdd14/skill-bridge/main/list.html
 
 
 

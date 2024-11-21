@@ -62,6 +62,13 @@
 			}
 		}
 	}
+	&--column{
+		.heading-box--left{
+			@include mq(){
+				width: 100%;
+			}
+		}
+	}
 }
 
 .show-box{
