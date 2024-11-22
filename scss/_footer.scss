@@ -382,6 +382,14 @@
 			@include mq(){
 				&__box{
 					padding: 15px 15px 66px;
+					background: url(../img/bg-item-02.png) no-repeat;
+					background-size: cover;
+					background-position: top center;
+					&:after{
+						right: 10px;
+						top: 15px;
+						bottom: auto;
+					}
 				}
 				&__ttl{
 					order: 1;

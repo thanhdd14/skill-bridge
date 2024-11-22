@@ -2927,6 +2927,14 @@ select:required:invalid {
 @media screen and (max-width: 834px) {
   .popup--search .pickup-list__box {
     padding: 15px 15px 66px;
+    background: url(../img/bg-item-02.png) no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+  .popup--search .pickup-list__box:after {
+    right: 10px;
+    top: 15px;
+    bottom: auto;
   }
   .popup--search .pickup-list__ttl {
     -webkit-box-ordinal-group: 2;
@@ -3622,11 +3630,24 @@ select:required:invalid {
 .news-column--block {
   margin-bottom: 50px;
 }
+@media screen and (max-width: 834px) {
+  .news-column--block {
+    margin: 0 -10px 50px -10px;
+  }
+}
+@media screen and (max-width: 834px) {
+  .news-column--block .news-column__item {
+    padding: 10px 8px;
+  }
+}
 .news-column--block .news-column__ct {
   font-size: 1.4rem;
   line-height: 1.4;
 }
 @media screen and (max-width: 834px) {
+  .news-column--block .news-column__ct {
+    padding: 11px 10px;
+  }
   .news-column--block .news-column__ct p {
     height: 40px;
   }
@@ -4445,44 +4466,44 @@ select:required:invalid {
 }
 
 @media screen and (max-width: 834px) {
-  #page-company .sec-pickup {
+  #page-company .sec-pickup, #page-company-current .sec-pickup {
     padding: 20px 0;
   }
-  #page-company .pickup-list__item {
+  #page-company .pickup-list__item, #page-company-current .pickup-list__item {
     width: 100%;
   }
-  #page-company .pickup-list__box {
+  #page-company .pickup-list__box, #page-company-current .pickup-list__box {
     background: url(../img/bg-item-02.png) no-repeat;
     background-size: cover;
     background-position: top center;
     padding: 9px 15px 45px;
   }
-  #page-company .pickup-list__box:after {
+  #page-company .pickup-list__box:after, #page-company-current .pickup-list__box:after {
     bottom: auto;
     top: 13px;
     right: 20px;
   }
-  #page-company .pickup-list__ttl {
+  #page-company .pickup-list__ttl, #page-company-current .pickup-list__ttl {
     width: 100%;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
     margin-bottom: 20px;
   }
-  #page-company .pickup-list__img {
+  #page-company .pickup-list__img, #page-company-current .pickup-list__img {
     width: 56px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  #page-company .pickup-list__ct {
+  #page-company .pickup-list__ct, #page-company-current .pickup-list__ct {
     width: calc(100% - 56px);
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     padding: 0 7px 35px 7px;
   }
-  #page-company .pickup-list__ct dl {
+  #page-company .pickup-list__ct dl, #page-company-current .pickup-list__ct dl {
     margin-bottom: 10px;
   }
 }

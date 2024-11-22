@@ -358,10 +358,19 @@
 
 	&--block{
 		margin-bottom: 50px;
+		@include mq(){
+			margin: 0 -10px 50px -10px;
+		}
 		.news-column{
+			&__item{
+				@include mq(){
+					padding: 10px 8px;
+				}
+			}
 			&__ct{
 				@include fts(14,19.6);
 				@include mq(){
+					padding: 11px 10px;
 					p{
 						height: 40px;
 					}
