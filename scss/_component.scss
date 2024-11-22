@@ -121,7 +121,7 @@ Component
 		span,a{
 			display: inline-block;
 			position: relative;
-			padding: 0 25px 0 0;
+			padding: 0 22px 0 0;
 			color: #0F1A2A;
 			&:after{
 				content: "";
@@ -131,8 +131,11 @@ Component
 				padding: 4px;
 				transform: rotate(-45deg);
 				position: absolute;
-				top: 9px;
+				top: 8px;
 				right: 0;
+			}
+			&:hover{
+				text-decoration: underline;
 			}
 		}
 	}

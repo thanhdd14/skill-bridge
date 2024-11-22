@@ -1371,7 +1371,7 @@ Component
 .c-ttl__02 span, .c-ttl__02 a {
   display: inline-block;
   position: relative;
-  padding: 0 25px 0 0;
+  padding: 0 22px 0 0;
   color: #0F1A2A;
 }
 .c-ttl__02 span:after, .c-ttl__02 a:after {
@@ -1384,8 +1384,11 @@ Component
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
   position: absolute;
-  top: 9px;
+  top: 8px;
   right: 0;
+}
+.c-ttl__02 span:hover, .c-ttl__02 a:hover {
+  text-decoration: underline;
 }
 .c-ttl__03 {
   display: block;
@@ -1860,6 +1863,9 @@ main {
   .inner {
     padding: 0 16px;
   }
+}
+.inner--1200 {
+  max-width: 1230px;
 }
 
 .form-control {
@@ -3471,6 +3477,7 @@ select:required:invalid {
 }
 .sec-news .c-ttl__01 {
   font-family: "Averta Std CY", sans-serif;
+  margin-bottom: 30px;
 }
 
 .news-list {
@@ -5958,6 +5965,11 @@ select:required:invalid {
   counter-reset: li;
   margin-bottom: 138px;
 }
+@media screen and (max-width: 1245px) {
+  .service-reason__list {
+    gap: 0 6.2vw;
+  }
+}
 @media screen and (max-width: 1024px) {
   .service-reason__list {
     margin-bottom: 86px;
@@ -5988,6 +6000,12 @@ select:required:invalid {
       flex-wrap: wrap;
   position: relative;
 }
+@media screen and (max-width: 1245px) {
+  .service-reason__list-item {
+    height: 28.3vw;
+    font-size: 2.2rem;
+  }
+}
 @media screen and (max-width: 834px) {
   .service-reason__list-item {
     font-size: 2.4rem;
@@ -6003,11 +6021,21 @@ select:required:invalid {
   width: 35px;
   height: 35px;
   background: url(../img/service/ico-X.png) no-repeat center/100%;
-  right: -20px;
+  right: -22px;
   top: 50%;
   -webkit-transform: translate(100%, -50%);
       -ms-transform: translate(100%, -50%);
           transform: translate(100%, -50%);
+}
+@media screen and (max-width: 1245px) {
+  .service-reason__list-item:after {
+    right: -1.5vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .service-reason__list-item:after {
+    right: -1vw;
+  }
 }
 @media screen and (max-width: 834px) {
   .service-reason__list-item:after {
@@ -6031,6 +6059,18 @@ select:required:invalid {
   font-size: 8rem;
   line-height: 1;
   letter-spacing: -5px;
+}
+@media screen and (max-width: 1245px) {
+  .service-reason__list-item::before {
+    font-size: 6rem;
+    top: 0;
+  }
+}
+@media screen and (max-width: 834px) {
+  .service-reason__list-item::before {
+    font-size: 8rem;
+    top: 13px;
+  }
 }
 .service-reason__list-item:last-of-type:after {
   display: none;
@@ -6096,7 +6136,7 @@ select:required:invalid {
           box-shadow: 0 4px 20px rgba(65, 105, 225, 0.2);
   border-radius: 20px;
   position: relative;
-  min-height: 380px;
+  min-height: 387px;
 }
 @media screen and (max-width: 1245px) {
   .service-reason__list02-item {
@@ -6106,7 +6146,7 @@ select:required:invalid {
 @media screen and (max-width: 834px) {
   .service-reason__list02-item {
     padding: 15px 15px 40px;
-    min-height: 370px;
+    min-height: 377px;
     margin-bottom: 47px;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -6283,7 +6323,7 @@ select:required:invalid {
 .support-list {
   max-width: 1040px;
   width: 100%;
-  margin: 0 auto clamp(3rem, -0.714rem + 9.905vw, 8.2rem);
+  margin: 0 auto clamp(3rem, 2.102rem + 2.395vw, 6.7rem);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0 40px;
@@ -6292,6 +6332,8 @@ select:required:invalid {
   .support-list {
     margin-bottom: 0;
     gap: 0 15px;
+    width: calc(100% + 7px);
+    margin-left: -3.5px;
   }
 }
 @media screen and (max-width: 640px) {

@@ -21,6 +21,9 @@ main{
 	@include mq(){
 		padding: 0 16px;
 	}
+	&--1200{
+		max-width: 1230px;
+	}
 }
 
 

@@ -81,6 +81,9 @@
 		gap: 0 78px;
 		counter-reset: li;
 		margin-bottom: 138px;
+		@include mq(xl){
+			gap: 0 6.2vw;
+		}
 		@include mq(tb){
 			margin-bottom: 86px;
 		}
@@ -99,6 +102,10 @@
 			justify-content: center;
 			flex-wrap: wrap;
 			position: relative;
+			@include mq(xl){
+				height: 28.3vw;
+				@include font-size(22);
+			}
 			@include mq{
 				@include font-size(24);
 				height: 320px;
@@ -107,9 +114,15 @@
 			}
 			@include p-after(35px, 35px){
 				background: url(../img/service/ico-X.png) no-repeat center/100%;
-				right: -20px;
+				right: -22px;
 				top: 50%;
 				transform: translate(100%, -50%);
+				@include mq(xl){
+					right: -1.5vw;
+				}
+				@include mq(tb){
+					right: -1vw;
+				}
 				@include mq{
 					right: auto;
 					left: 50%;
@@ -129,6 +142,14 @@
 				@include font-size(80);
 				line-height: 1;
 				letter-spacing: -5px;
+				@include mq(xl){
+					@include font-size(60);
+					top: 0;
+				}
+				@include mq{
+					@include font-size(80);
+					top: 13px;
+				}
 			}
 			&:last-of-type{
 				&:after{
@@ -178,13 +199,13 @@
 			box-shadow: 0 4px 20px rgba(#4169E1, 0.2);
 			border-radius: 20px;
 			position: relative;
-			min-height: 380px;
+			min-height: 387px;
 			@include mq(xl){
 				padding: 40px 30px 40px;
 			}
 			@include mq{
 				padding: 15px 15px 40px;
-				min-height: 370px;
+				min-height: 377px;
 				margin-bottom: 47px;
 				align-items: flex-start;
 			}
@@ -327,13 +348,15 @@
 .support-list{
 	max-width: 1040px;
 	width: 100%;
-	margin: 0 auto clamp(3rem, -0.714rem + 9.905vw, 8.2rem);
+	margin: 0 auto clamp(3rem, 2.102rem + 2.395vw, 6.7rem);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 0 40px;
 	@include mq{
 		margin-bottom: 0;
 		gap: 0 15px;
+		width: calc(100% + 7px);
+        margin-left: -3.5px;
 	}
 	@include mq(sm){
 		grid-template-columns: 1fr;
