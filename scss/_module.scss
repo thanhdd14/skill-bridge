@@ -173,6 +173,7 @@ select:required:invalid {
 .sec-breadcrumb{
 	padding: 20px 0;
 	@include font-size(16);
+	color: #463B39;
 	.inner{
 		@include flex(0,center,wrap);
 		a{

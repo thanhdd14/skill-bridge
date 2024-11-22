@@ -2016,6 +2016,7 @@ select:required:invalid {
 .sec-breadcrumb {
   padding: 20px 0;
   font-size: 1.6rem;
+  color: #463B39;
 }
 .sec-breadcrumb .inner {
   display: -ms-flexbox;
