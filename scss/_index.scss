@@ -22,7 +22,7 @@
 	}
 }
 .mv-block{
-	@include flex(between,start,wrap);
+	@include flex(between,0,wrap);
 	&__item{
 		width: calc(50% - 15px);
 		border-radius: 15px;
@@ -155,17 +155,34 @@
 	}
 	&__box{
 		border-radius: 0 15px 0 15px;
-		border-top: 2px solid $blue;
-		border-bottom: 2px solid $blue;
-		border-left: 10px solid $blue;
-		border-right: 10px solid $blue;
-		background: white;
+		//border-top: 2px solid $blue;
+		//border-bottom: 2px solid $blue;
+		//border-left: 10px solid $blue;
+		//border-right: 10px solid $blue;
+		//background: white;
+		background: rgb(65, 105, 225);
+		background: linear-gradient(140deg, rgba(65, 105, 225, 1) 0%, rgba(90, 131, 255, 1) 100%);
 		position: relative;
 		@include fts(16,25);
 		color: #64748B;
-		padding: 18px 15px 32px 100px;
+		padding: 18px 15px 32px 110px;
+		>*{
+			position: relative;
+			z-index: 2;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: 10px;
+			right: 10px;
+			bottom: 2px;
+			z-index: 1;
+			background: white;
+			border-radius: 0 15px 0 15px;
+		}
 		@include mq(){
-			padding: 16px 15px;
+			padding: 16px 24px;
 		}
 		&-ttl{
 			display: block;
@@ -180,11 +197,10 @@
 		@include font-size(18);
 		color: $blue;
 		font-weight: bold;
-		position: absolute;
-		top: 20px;
-		left: 15px;
-		@include mq(){
-			position: static;
+		@include mq(md-min){
+			position: absolute;
+			top: 20px;
+			left: 25px;
 		}
 	}
 }
@@ -212,6 +228,9 @@
 			top: 0;
 			right: 15px;
 		}
+	}
+	.c-ttl__01{
+		font-family: "Averta Std CY", sans-serif;
 	}
 }
 
@@ -265,9 +284,9 @@
 			&:hover{
 				opacity: 1;
 				background: white;
-				color: $blue;
+				color: #0072F8;
 				.news-list__date{
-					color: $blue;
+					color: #0072F8;
 				}
 				&:after{
 					background: url("../img/arrow-right-blue.png")no-repeat;
@@ -620,12 +639,24 @@
 			padding: 0;
 			background: white;
 		}
-		&:after{
-			content: "";
+		//&:after{
+		//	content: "";
+		//	width: 20px;
+		//	height: 20px;
+		//	background: url("../img/icon-pin.png")no-repeat;
+		//	background-size: 100%;
+		//	position: absolute;
+		//	top: 10px;
+		//	right: 10px;
+		//	@include mq(){
+		//		right: 5px;
+		//		top: auto;
+		//		bottom: 16px;
+		//	}
+		//}
+		&--pin{
 			width: 20px;
 			height: 20px;
-			background: url("../img/icon-pin.png")no-repeat;
-			background-size: 100%;
 			position: absolute;
 			top: 10px;
 			right: 10px;
@@ -731,7 +762,7 @@
 		background: url("../img/bg-item-02.png")no-repeat;
 		background-size: cover;
 		background-position: top center;
-		padding: 15px;
+		padding: 16px;
 		position: relative;
 		@include font-size(14);
 		border-radius: 12px;

@@ -385,7 +385,7 @@
 					background: url(../img/bg-item-02.png) no-repeat;
 					background-size: cover;
 					background-position: top center;
-					&:after{
+					&:after,.pickup-list__box--pin{
 						right: 10px;
 						top: 15px;
 						bottom: auto;

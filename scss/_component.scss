@@ -101,7 +101,10 @@ Component
 		text-align: center;
 		line-height: 1.4;
 		font-family: $font-en;
-		color: $blue;
+		background: #3755F3;
+		background: linear-gradient(to right, #3755F3 0%, #137FD9 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 		@include font-size(40);
 		font-weight: bold;
 		margin-bottom: 58px;
@@ -115,10 +118,11 @@ Component
 		@include font-size(18);
 		font-weight: bold;
 		margin-bottom: 30px;
-		span{
+		span,a{
 			display: inline-block;
 			position: relative;
 			padding: 0 25px 0 0;
+			color: #0F1A2A;
 			&:after{
 				content: "";
 				border: solid #0f1a2a;
@@ -263,6 +267,9 @@ Component
 		&--gray{
 			background: #E2E8F0;
 			color: #1E2A3B;
+		}
+		&--red{
+			background: #ED2649;
 		}
 	}
 	&__03{

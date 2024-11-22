@@ -133,7 +133,7 @@
 				background-size: cover;
 				background-position: top center;
 				padding: 9px 15px 45px;
-				&:after{
+				&:after,.pickup-list__box--pin{
 					bottom: auto;
 					top: 13px;
 					right: 20px;

@@ -1346,7 +1346,12 @@ Component
   text-align: center;
   line-height: 1.4;
   font-family: "George", serif;
-  color: #4169E1;
+  background: #3755F3;
+  background: -webkit-gradient(linear, left top, right top, from(#3755F3), to(#137FD9));
+  background: -o-linear-gradient(left, #3755F3 0%, #137FD9 100%);
+  background: linear-gradient(to right, #3755F3 0%, #137FD9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 58px;
@@ -1363,12 +1368,13 @@ Component
   font-weight: bold;
   margin-bottom: 30px;
 }
-.c-ttl__02 span {
+.c-ttl__02 span, .c-ttl__02 a {
   display: inline-block;
   position: relative;
   padding: 0 25px 0 0;
+  color: #0F1A2A;
 }
-.c-ttl__02 span:after {
+.c-ttl__02 span:after, .c-ttl__02 a:after {
   content: "";
   border: solid #0f1a2a;
   border-width: 0 2px 2px 0;
@@ -1558,6 +1564,9 @@ Component
 .c-btn__02--gray {
   background: #E2E8F0;
   color: #1E2A3B;
+}
+.c-btn__02--red {
+  background: #ED2649;
 }
 .c-btn__03 {
   display: -ms-flexbox;
@@ -2931,7 +2940,7 @@ select:required:invalid {
     background-size: cover;
     background-position: top center;
   }
-  .popup--search .pickup-list__box:after {
+  .popup--search .pickup-list__box:after, .popup--search .pickup-list__box .pickup-list__box--pin {
     right: 10px;
     top: 15px;
     bottom: auto;
@@ -3211,9 +3220,6 @@ select:required:invalid {
   -ms-flex-pack: justify;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  -ms-flex-align: start;
-  -webkit-box-align: start;
-          align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -3386,20 +3392,33 @@ select:required:invalid {
 }
 .steps-list__box {
   border-radius: 0 15px 0 15px;
-  border-top: 2px solid #4169E1;
-  border-bottom: 2px solid #4169E1;
-  border-left: 10px solid #4169E1;
-  border-right: 10px solid #4169E1;
-  background: white;
+  background: royalblue;
+  background: -o-linear-gradient(310deg, royalblue 0%, #5a83ff 100%);
+  background: linear-gradient(140deg, royalblue 0%, #5a83ff 100%);
   position: relative;
   font-size: 1.6rem;
   line-height: 1.5625;
   color: #64748B;
-  padding: 18px 15px 32px 100px;
+  padding: 18px 15px 32px 110px;
+}
+.steps-list__box > * {
+  position: relative;
+  z-index: 2;
+}
+.steps-list__box:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  right: 10px;
+  bottom: 2px;
+  z-index: 1;
+  background: white;
+  border-radius: 0 15px 0 15px;
 }
 @media screen and (max-width: 834px) {
   .steps-list__box {
-    padding: 16px 15px;
+    padding: 16px 24px;
   }
 }
 .steps-list__box-ttl {
@@ -3414,13 +3433,12 @@ select:required:invalid {
   font-size: 1.8rem;
   color: #4169E1;
   font-weight: bold;
-  position: absolute;
-  top: 20px;
-  left: 15px;
 }
-@media screen and (max-width: 834px) {
+@media screen and (min-width: 835px) {
   .steps-list__steps {
-    position: static;
+    position: absolute;
+    top: 20px;
+    left: 25px;
   }
 }
 
@@ -3450,6 +3468,9 @@ select:required:invalid {
   position: absolute;
   top: 0;
   right: 15px;
+}
+.sec-news .c-ttl__01 {
+  font-family: "Averta Std CY", sans-serif;
 }
 
 .news-list {
@@ -3520,10 +3541,10 @@ select:required:invalid {
 .news-list__item a:hover {
   opacity: 1;
   background: white;
-  color: #4169E1;
+  color: #0072F8;
 }
 .news-list__item a:hover .news-list__date {
-  color: #4169E1;
+  color: #0072F8;
 }
 .news-list__item a:hover:after {
   background: url("../img/arrow-right-blue.png") no-repeat;
@@ -3977,18 +3998,15 @@ select:required:invalid {
     background: white;
   }
 }
-.pickup-list__box:after {
-  content: "";
+.pickup-list__box--pin {
   width: 20px;
   height: 20px;
-  background: url("../img/icon-pin.png") no-repeat;
-  background-size: 100%;
   position: absolute;
   top: 10px;
   right: 10px;
 }
 @media screen and (max-width: 834px) {
-  .pickup-list__box:after {
+  .pickup-list__box--pin {
     right: 5px;
     top: auto;
     bottom: 16px;
@@ -4127,7 +4145,7 @@ select:required:invalid {
   background: url("../img/bg-item-02.png") no-repeat;
   background-size: cover;
   background-position: top center;
-  padding: 15px;
+  padding: 16px;
   position: relative;
   font-size: 1.4rem;
   border-radius: 12px;
@@ -4478,7 +4496,7 @@ select:required:invalid {
     background-position: top center;
     padding: 9px 15px 45px;
   }
-  #page-company .pickup-list__box:after, #page-company-current .pickup-list__box:after {
+  #page-company .pickup-list__box:after, #page-company .pickup-list__box .pickup-list__box--pin, #page-company-current .pickup-list__box:after, #page-company-current .pickup-list__box .pickup-list__box--pin {
     bottom: auto;
     top: 13px;
     right: 20px;
