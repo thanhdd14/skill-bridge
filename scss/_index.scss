@@ -377,19 +377,27 @@
 	}
 
 	&--block{
+		margin: 0 -15px 50px;
 		margin-bottom: 50px;
 		@include mq(){
 			margin: 0 -10px 50px -10px;
 		}
 		.news-column{
 			&__item{
+				padding: 0 15px;
+				margin-bottom: 30px;
 				@include mq(){
 					padding: 10px 8px;
+					margin-bottom: 0;
 				}
 			}
 			&__ct{
-				@include fts(14,19.6);
+				font-size: 1.6rem;
+				line-height: 1.5;
+				padding: 14px 10px;
 				@include mq(){
+					@include font-size(14);
+					line-height: 1.4;
 					padding: 11px 10px;
 					p{
 						height: 40px;
