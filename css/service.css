@@ -3554,7 +3554,6 @@ select:required:invalid {
 .heading-box__note .c-btn__02,
 .c-modal__control .c-btn__02{
   position: relative;
-  overflow: hidden;
 }
 .heading-box__note .c-btn__02:after,
 .c-modal__control .c-btn__02:after{
@@ -3564,6 +3563,7 @@ select:required:invalid {
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 50px;
   background: rgb(255 255 255 / 24%);
   -moz-transition: ease 0.3s;
   -o-transition: ease 0.3s;
