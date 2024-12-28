@@ -1731,6 +1731,7 @@ Component
   padding-left: 30px;
   background: rgb(65, 105, 225);
   background: linear-gradient(140deg, #3755F3 0%, #137FD9 100%);
+  z-index: 10;
 }
 @media screen and (max-width: 834px) {
   .c-btn__solid {
@@ -2265,7 +2266,7 @@ select:required:invalid {
 .service-mv {
   padding: 84px 107px 170px;
   background: rgb(65, 105, 225);
-  background: linear-gradient(140deg, #3755F3 0%, #137FD9 100%);
+  background: linear-gradient(92.77deg, #3755F3 0%, #137FD9 99.82%);
   color: #fff;
   position: relative;
 }
@@ -2378,10 +2379,28 @@ select:required:invalid {
 
 .service-intro {
   padding-top: 84px;
+  position: relative;
+}
+.service-intro::before{
+  content: "";
+  display: inline-block;
+  width: min(15.833vw, 304px);
+  height: min(14.948vw, 287px);
+  background: url(../img/service/before-02.png) no-repeat center/100%;
+  top: 50px;
+  left: 0;
+  position: absolute;
+}
+.service-intro .inner {
+  position: relative;
+  z-index: 2;
 }
 @media screen and (max-width: 834px) {
   .service-intro .inner {
     padding: 0 24px;
+  }
+  .service-intro::before{
+    display: none;
   }
 }
 .service-intro__ttl {
@@ -2425,10 +2444,34 @@ select:required:invalid {
 
 .service-second {
   padding-top: 80px;
+  position: relative;
+}
+.service-second::before{
+  content: "";
+  display: inline-block;
+  width: min(9.531vw,183px);
+  height: min(10.573vw, 203px);
+  background: url(../img/service/before-01.png) no-repeat center/100%;
+  top: 22px;
+  left: 10px;
+  position: absolute;
+}
+.service-second::after{
+  content: "";
+  display: inline-block;
+  width: min(16.771vw, 322px);
+  height: min(14.948vw, 287px);
+  background: url(../img/service/after-01.png) no-repeat center/100%;
+  bottom: 34.6%;
+  right: 0;
+  position: absolute;
 }
 @media screen and (max-width: 834px) {
   .service-second {
     padding-top: 83px;
+  }
+  .service-second::before{
+    display: none;
   }
 }
 @media screen and (max-width: 834px) {
@@ -2540,6 +2583,10 @@ select:required:invalid {
   }
 }
 @media screen and (max-width: 834px) {
+  .service-second__list-ttlsub{
+    font-size: 2.4rem;
+    height: auto;
+  }
   .service-second__list02 {
     grid-template-columns: 1fr;
     padding: 0 8px;
@@ -2922,10 +2969,9 @@ select:required:invalid {
           align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 3.333vw;
+  padding: 3.393vw 3.333vw;
   -webkit-box-shadow: 0 43px 43px rgba(0, 0, 0, 0.16);
           box-shadow: 0 43px 43px rgba(0, 0, 0, 0.16);
-  border-radius: 10px;
 }
 @media screen and (max-width: 834px) {
   .service-bnr {
