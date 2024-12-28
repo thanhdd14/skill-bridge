@@ -2355,7 +2355,7 @@ Component
 
 .c-btn__02--gray {
     background: #E2E8F0;
-    color: #1E2A3B;
+    color: #1E2A3B !important;
 }
 .c-btn__02--red {
     background: #ED2649;
