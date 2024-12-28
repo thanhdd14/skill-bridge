@@ -1109,25 +1109,8 @@ body {
   color: #64748B !important;
 }
 
-.c-ft--en {
-  font-family: "George", serif;
-}
-.c-ft--jp {
-  font-family: "Averta Std CY", sans-serif;
-}
-.c-ft--serif {
-  font-family: "Noto Serif", serif;
-}
 
-.c-al--c {
-  text-align: center !important;
-}
-.c-al--r {
-  text-align: right !important;
-}
-.c-al--l {
-  text-align: left !important;
-}
+
 
 .c-pull--left {
   margin-left: calc((100vw - 100%) / 2 * -1);
@@ -3635,5 +3618,5 @@ select:required:invalid {
   color: #0F1A2A !important;
 }
 .c-modal__control .c-btn__02--gray{
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif JP", serif;
 }
