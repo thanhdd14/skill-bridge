@@ -14425,3 +14425,49 @@ Header
 .min-h-news-5::after {
     min-height: 40rem;
 }
+
+.heading-box__note .c-btn__02,
+.c-modal__control .c-btn__02{
+    position: relative;
+}
+.heading-box__note .c-btn__02:after,
+.c-modal__control .c-btn__02:after,
+.c-modal__control{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: rgb(255 255 255 / 24%);
+    -moz-transition: ease 0.3s;
+    -o-transition: ease 0.3s;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.c-btn__02 span,.c-btn__02 img{
+    position: relative;
+    z-index: 1;
+}
+.heading-box__note .c-btn__02:hover:after,
+.c-modal__control .c-btn__02:hover:after{
+    opacity: 1;
+    visibility: visible;
+}
+.heading-box__note .c-btn__02:hover,
+.c-modal__control .c-btn__02:hover{
+    color: white !important;
+    opacity: 1 !important;
+}
+.tooltip-hv:hover{
+    opacity: 1 !important;
+}
+.c-modal__control .c-btn__02--gray:hover{
+    color: #0F1A2A !important;
+}
+.c-modal__control .c-btn__02--gray{
+    font-family: "Noto Serif JP", serif;
+}
