@@ -2953,7 +2953,7 @@ select:required:invalid {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 3.393vw 3.333vw;
+  padding: 63px 62px 62px 67px;
   -webkit-box-shadow: 0 43px 43px rgba(0, 0, 0, 0.16);
   box-shadow: 0 43px 43px rgba(0, 0, 0, 0.16);
 }
@@ -2976,6 +2976,7 @@ select:required:invalid {
 .service-bnr__ct .c-btn__solid {
   max-width: 250px;
   margin: 0 auto;
+  /* height: 60px; */
 }
 .service-bnr__ttl {
   margin-bottom: 32px;
@@ -2987,7 +2988,7 @@ select:required:invalid {
 }
 .service-bnr__ttl .txt-sm {
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 @media screen and (max-width: 834px) {
   .service-bnr__ttl .txt-sm {
@@ -3042,7 +3043,7 @@ select:required:invalid {
   }
 }
 .service-bnr--styles02 {
-  padding: 3.45vw 3.333vw;
+  padding: 73px 62px 69px 67px;
 }
 @media screen and (max-width: 834px) {
   .service-bnr--styles02 {
